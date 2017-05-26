@@ -30,9 +30,9 @@
 	"Promise.reject": {
 		"prefix": "prj",
 		"body": "Promise.reject(${1:value})"
-	},	
+	},
 	"Promise": {
-		"prefix": "p",
+		"prefix": "pro",
 		"body": "Promise"
 	},
 	"new Promise": {
@@ -254,36 +254,36 @@
 		"prefix": "csx",
 		"body": "class ${1:name} extends ${2:base} {\n\tconstructor (${3:arguments}) {\n\t\tsuper(${3:arguments})\n\t\t${0}\n\t}\n}"
 	},
-	"module export": {
-		"prefix": "e",
-		"body": "export ${1:member}"
-	},
-	"module export const": {
-		"prefix": "ec",
-		"body": "export const ${1:member} = ${2:value}"
-	},
-	"module default export": {
-		"prefix": "ed",
-		"body": "export default ${1:member}"
-	},
-	"module default export function": {
-		"prefix": "edf",
-		"body": "export default function ${1:name} (${2:arguments}) {\n\t${0}\n}"
-	},
-	"import module": {
-		"prefix": "im",
-		"body": "import ${1:*} from '${2:module}'"
-	},
-	"import module as": {
-		"prefix": "ia",
-		"body": "import ${1:*} as ${2:name} from '${3:module}'"
-	},
-	"import module destructured": {
-		"prefix": "id",
-		"body": "import {$1} from '${2:module}'"
-	},
+	// "module export": {
+	// 	"prefix": "e",
+	// 	"body": "export ${1:member}"
+	// },
+	// "module export const": {
+	// 	"prefix": "ec",
+	// 	"body": "export const ${1:member} = ${2:value}"
+	// },
+	// "module default export": {
+	// 	"prefix": "ed",
+	// 	"body": "export default ${1:member}"
+	// },
+	// "module default export function": {
+	// 	"prefix": "edf",
+	// 	"body": "export default function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+	// },
+	// "import module": {
+	// 	"prefix": "im",
+	// 	"body": "import ${1:*} from '${2:module}'"
+	// },
+	// "import module as": {
+	// 	"prefix": "ia",
+	// 	"body": "import ${1:*} as ${2:name} from '${3:module}'"
+	// },
+	// "import module destructured": {
+	// 	"prefix": "id",
+	// 	"body": "import {$1} from '${2:module}'"
+	// },
 	"typeof": {
-		"prefix": "t",
+		"prefix": "tof",
 		"body": "typeof ${1:source} === '${2:undefined}'"
 	},
 	"instanceof": {
@@ -394,18 +394,18 @@
 		"prefix": "gfn",
 		"body": "function* ${1:name}(${2:arguments}) {\n\t${0}\n}"
 	},
-	"console.log": {
-		"prefix": "cl",
-		"body": "console.log(${0})"
-	},
-	"console.error": {
-		"prefix": "ce",
-		"body": "console.error(${0})"
-	},
-	"console.warn": {
-		"prefix": "cw",
-		"body": "console.warn(${0})"
-	},
+	// "console.log": {
+	// 	"prefix": "cl",
+	// 	"body": "console.log(${0})"
+	// },
+	// "console.error": {
+	// 	"prefix": "ce",
+	// 	"body": "console.error(${0})"
+	// },
+	// "console.warn": {
+	// 	"prefix": "cw",
+	// 	"body": "console.warn(${0})"
+	// },
 	"constructor": {
 		"prefix": "cn",
 		"body": "constructor () {\n\t${0}\n}"
@@ -449,11 +449,11 @@
 	"Object.create": {
 		"prefix": "oc",
 		"body": "Object.create(${1:obj})"
-	},		
+	},
 	"Object.getOwnPropertyDescriptor": {
 		"prefix": "og",
 		"body": "Object.getOwnPropertyDescriptor(${1:obj}, '${2:prop}')"
-	},	
+	},
 	"Object.defineProperty": {
 		"prefix": "od",
 		"body": "Object.defineProperty(${1:dest}, '${2:prop}', {\n\t${0}\n})"
@@ -481,7 +481,7 @@
 	"return new object": {
 		"prefix": "ro",
 		"body": "return {\n\t${0}\n}"
-	},	
+	},
 	"return new array": {
 		"prefix": "ra",
 		"body": "return [\n\t${0}\n]"

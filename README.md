@@ -3,7 +3,7 @@ originally forked from https://github.com/gaboesquivel/atom-standardjs-snippets,
 
 ## Standard JavaScript Snippets for Visual studio code
 
-A collection of ES6 snippets for faster JavaScript development in [Atom Editor](https://atom.io/).  
+A collection of ES6 snippets for faster JavaScript development in [Atom Editor](https://atom.io/).
 
 This collection is complementary to [atom/language-javascript](https://github.com/atom/language-javascript). It's based on [extrabacon/atom-turbo-javascript](https://github.com/extrabacon/atom-turbo-javascript) and it enforces [standardjs code style](http://standardjs.com/).
 
@@ -75,14 +75,15 @@ let ${1:name} = yield ${2:value}
 ```js
 const ${1:name}
 ```
-#### `cd⇥` const from destructuring
-```js
-const {${1:name}} = ${2:value}
-```
 
 #### `ca⇥` const assignment
 ```js
 const ${1:name} = ${2:value}
+```
+
+#### `cd⇥` const from destructuring
+```js
+const {${1:name}} = ${2:value}
 ```
 
 #### `cy⇥` const yielded assignment
@@ -451,7 +452,7 @@ Array.isArray(${1:source})
 
 ### Promises
 
-#### `p⇥` new Promise (ES6)
+#### `pro⇥` new Promise (ES6)
 ```js
 new Promise((resolve, reject) => {
   ${0}

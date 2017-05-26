@@ -1,6 +1,8 @@
 # vscode-standardjs-snippets
 
-Forked from https://github.com/capaj/vscode-standardjs-snippets to changes the snippet prefixs to be more compatible when inlined with intellisene keywords.
+Forked from https://github.com/capaj/vscode-standardjs-snippets to changes the snippet prefixs to be more compatible when inlined with intellisense keywords.
+
+ES6 Import and export snippets as well as the console snippets are from https://github.com/xabikos/vscode-javascript, converted to Standard JS format with new prefixes and descriptions.
 
 "Originally forked from https://github.com/gaboesquivel/atom-standardjs-snippets, but we've added couple more. Also these are not using special characters because vscode doesn't like them in the snippets."
 
@@ -487,7 +489,7 @@ return new Promise((resolve, reject) => {
 
 ### Promises
 
-#### `pro⇥` new Promise (ES6)
+#### `pnew⇥` new Promise (ES6)
 ```js
 new Promise((resolve, reject) => {
   ${0}
@@ -536,40 +538,63 @@ yield ${0}
 
 ### ES6 modules
 
-<!--#### `e⇥` module export
+#### `imd⇥` import module default export
 ```js
-export ${1:member}
+import ${2:moduleName} from '${1:module}'$0
 ```
 
-#### `ed⇥` module default export
+#### `id⇥` import member(s) of module with destructuring
 ```js
-export default ${1:member}
+import { $2 } from '${1:module}'$0
 ```
 
-#### `edf⇥` module default export function
+#### `ia⇥` import member(s) of module in a local alias with destructuring
 ```js
-export default function ${1:name} (${2:arguments}) {\n\t${0}\n}
-
-```
-#### `ec⇥` module export const
-```js
-export const ${1:member} = ${2:value}
+import { ${2:originalName} as ${3:alias} } from '${1:module}'$0
 ```
 
-#### `im⇥` module import
+#### `ia⇥` import entire module without bindings
 ```js
-import ${1:*} from '${2:module}'
+import '${1:module}'$0
 ```
 
-#### `ia⇥` module import as
+#### `ia⇥` import all exported bindings in a local alias
 ```js
-import ${1:*} as ${2:name} from '${3:module}'
+import * as ${2:alias} from '${1:module}'$0
 ```
 
-#### `id⇥` module import destructuring
+#### `emf⇥` export member function(s)
 ```js
-import {$1} from '${2:module}'
-```-->
+export {${0}}
+```
+
+#### `edf⇥` export default function
+```js
+export default (${1:params}) =>  {
+  $0
+}
+```
+
+#### `enf⇥` export named function
+```js
+export const ${1:functionName} = (${2:params}) =>  {
+  $0
+}
+```
+
+#### `edc⇥` export default class
+```js
+export default class ${1:className} {
+  $0
+}
+```
+
+#### `edce⇥` export default class that extends a base class
+```js
+export default class ${1:className} extends ${2:baseclassName} {
+  $0
+}
+```
 
 
 ### Node.js modules
@@ -711,20 +736,60 @@ JSON.parse($0)
 
 ### Console
 
-<!--#### `cl⇥` console.log
+#### `coa⇥` console.assert
 ```js
-console.log(${0})
+console.assert(${1:expression}, ${2:object})
 ```
 
-#### `ce⇥` console.error
+#### `coc⇥` console.clear
 ```js
-console.error(${0})
+console.clear()
 ```
 
-#### `cw⇥` console.warn
+#### `coct⇥` console.count
 ```js
-console.warn(${0})
-```-->
+console.count(${1:label})
+```
+
+#### `cod⇥` console.dir
+```js
+console.dir(${1:object})
+```
+
+#### `coe⇥` console.error
+```js
+console.error(${1:object})
+```
+
+#### `cog⇥` console.group
+```js
+console.group(\"${1:label}\")
+```
+
+#### `coge⇥` console.groupEnd
+```js
+console.groupEnd()
+```
+
+#### `coi⇥` console.info
+```js
+console.info(${1:object})
+```
+
+#### `col⇥` console.log
+```js
+console.log(${1:object})
+```
+
+#### `cot⇥` console.trace
+```js
+console.trace(${1:object})
+```
+
+#### `cow⇥` console.warn
+```js
+console.warn(${1:object})
+```
 
 
 ### DOM

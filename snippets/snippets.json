@@ -34,7 +34,7 @@
 	},
 	"const object destructuring": {
 		"prefix": "cod",
-		"body": "const {${1:name}} = ${2:value}"
+		"body": "const {${1:name}} = ${2:object}"
 	},
 	"const array": {
 		"prefix": "cna",
@@ -42,7 +42,7 @@
 	},
 	"const array destructuring": {
 		"prefix": "cad",
-		"body": "const [{${1:name}}] = ${2:value}"
+		"body": "const [{${1:name}}] = ${2:array}"
 	},
 	"const yielded assignment": {
 		"prefix": "cy",
@@ -303,34 +303,56 @@
 	},
 
 	// ES6 modules
-	// "module export": {
-	// 	"prefix": "e",
-	// 	"body": "export ${1:member}"
-	// },
-	// "module export const": {
-	// 	"prefix": "ec",
-	// 	"body": "export const ${1:member} = ${2:value}"
-	// },
-	// "module default export": {
-	// 	"prefix": "ed",
-	// 	"body": "export default ${1:member}"
-	// },
-	// "module default export function": {
-	// 	"prefix": "edf",
-	// 	"body": "export default function ${1:name} (${2:arguments}) {\n\t${0}\n}"
-	// },
-	// "import module": {
-	// 	"prefix": "im",
-	// 	"body": "import ${1:*} from '${2:module}'"
-	// },
-	// "import module as": {
-	// 	"prefix": "ia",
-	// 	"body": "import ${1:*} as ${2:name} from '${3:module}'"
-	// },
-	// "import module destructured": {
-	// 	"prefix": "id",
-	// 	"body": "import {$1} from '${2:module}'"
-	// },
+	"importModuleDefault": {
+		"prefix": "imd",
+		"body": "import ${2:moduleName} from '${1:module}'$0",
+		"description": "Import module default export"
+	},
+	"importModuleMember": {
+		"prefix": "imm",
+		"body": "import { $2 } from '${1:module}'$0",
+		"description": "Import member(s) of module with destructuring"
+	},
+	"importModuleMemberAs": {
+		"prefix": "imma",
+		"body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0",
+		"description": "Import member(s) of module in a local alias with destructuring"
+	},
+	"importModuleWithoutBindings": {
+		"prefix": "imwb",
+		"body": "import '${1:module}'$0",
+		"description": "Import entire module without bindings"
+	},
+	"importModuleAs": {
+		"prefix": "ima",
+		"body": "import * as ${2:alias} from '${1:module}'$0",
+		"description": "Import all exported bindings in a local alias"
+	},
+	"exportMemberFunction": {
+		"prefix": "emf",
+		"body": "export {${0}}",
+		"description": "Export member function(s)"
+	},
+	"exportDefaultFunction": {
+		"prefix": "edf",
+		"body": "export default (${1:params}) =>  {\n\t$0\n}\n",
+		"description": "Export default function"
+	},
+	"exportNamedFunction": {
+		"prefix": "enf",
+		"body": "export const ${1:functionName} = (${2:params}) =>  {\n\t$0\n}\n",
+		"description": "Export named function"
+	},
+	"exportDefaultClass": {
+		"prefix": "edc",
+		"body": "export default class ${1:className} {\n\t$0\n}\n",
+		"description": "Export default class"
+	},
+	"exportDefaultClassExtends": {
+		"prefix": "edce",
+		"body": "export default class ${1:className} extends ${2:baseclassName} {\n\t$0\n}\n",
+		"description": "Export default class that extends a base class"
+	},
 
 	// node.js modules
 	"require": {
@@ -429,18 +451,61 @@
 	},
 
 	// Console
-	// "console.log": {
-	// 	"prefix": "cl",
-	// 	"body": "console.log(${0})"
-	// },
-	// "console.error": {
-	// 	"prefix": "ce",
-	// 	"body": "console.error(${0})"
-	// },
-	// "console.warn": {
-	// 	"prefix": "cw",
-	// 	"body": "console.warn(${0})"
-	// },
+	"consoleAssert": {
+		"prefix": "coa",
+		"body": "console.assert(${1:expression}, ${2:object})",
+		"description": "If the specified expression is false, the message is written to the console along with a stack trace"
+	},
+	"consoleClear": {
+		"prefix": "coc",
+		"body": "console.clear()",
+		"description": "Clears the console"
+	},
+	"consoleCount": {
+		"prefix": "coct",
+		"body": "console.count(${1:label})",
+		"description": "Writes the the number of times that count() has been invoked at the same line and with the same label"
+	},
+	"consoleDir": {
+		"prefix": "cod",
+		"body": "console.dir(${1:object})",
+		"description": "Prints a JavaScript representation of the specified object"
+	},
+	"consoleError": {
+		"prefix": "coe",
+		"body": "console.error(${1:object})",
+		"description": "Displays a message in the console and also includes a stack trace from where the method was called"
+	},
+	"consoleGroup": {
+		"prefix": "cog",
+		"body": "console.group(\"${1:label}\")",
+		"description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+	},
+	"consoleGroupEnd": {
+		"prefix": "coge",
+		"body": "console.groupEnd()",
+		"description": "Closes out the corresponding console.group()."
+	},
+	"consoleInfo": {
+		"prefix": "coi",
+		"body": "console.info(${1:object})",
+		"description": "Displays a message in the console but also displays a blue information icon along with the logged message"
+	},
+	"consoleLog": {
+		"prefix": "col",
+		"body": "console.log(${1:object})",
+		"description": "Displays a message in the console"
+	},
+	"consoleTrace": {
+		"prefix": "cot",
+		"body": "console.trace(${1:object})",
+		"description": "Prints a stack trace from the point where the method was called"
+	},
+	"consoleWarn": {
+		"prefix": "cow",
+		"body": "console.warn(${1:object})",
+		"description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+	},
 
 	// DOM
 	"addEventListener": {

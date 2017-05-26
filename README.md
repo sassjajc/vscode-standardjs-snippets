@@ -1,5 +1,8 @@
 # vscode-standardjs-snippets
-originally forked from https://github.com/gaboesquivel/atom-standardjs-snippets, but we've added couple more. Also these are not using special characters because vscode doesn't like them in the snippets.
+
+Forked from https://github.com/capaj/vscode-standardjs-snippets to changes the snippet prefixs to be more compatible when inlined with intellisene keywords.
+
+"Originally forked from https://github.com/gaboesquivel/atom-standardjs-snippets, but we've added couple more. Also these are not using special characters because vscode doesn't like them in the snippets."
 
 ## Standard JavaScript Snippets for Visual studio code
 
@@ -15,18 +18,23 @@ __Yes!, no semicolons:__
 - [JavaScript Semicolon Insertion - Everything You Need to Know](http://inimino.org/~inimino/blog/javascript_semicolons)
 
 
-## Making the snippets top priority
+## No need to give snippets the top autocompletion priority
 
-I certainly prefer snippets to have the top priority in the autocompletion. This is not a default settingm but can be enabled by:
+Although you can enable it, it isn't necessary for snippets to be at the top of your autocompletion results.
+Intellisense keyword completion is generally more important to me, so I keep the default value of inlining snippets with keywords.
+
+However, if you want snippets to be at the top, you can enable it with:
 
 ```
 "editor.snippetSuggestions": "top",
 ```
-in your settings.json. Otherwise vscode prefers keywords on the top.
+in your settings.json.
 
 ## Snippets
 
-Snippets are optimized to be short and easy to remember. Note that these links work only on github, not on VSCode marketplace:
+Snippets are optimized to be short and mnemonic, but also to not conflict with common JavaScript keywords.
+
+Note that these links work only on github, not on VSCode marketplace:
 
 - [declarations](#declarations)
 - [flow control](#flow-control)

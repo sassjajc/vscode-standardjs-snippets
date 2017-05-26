@@ -41,16 +41,16 @@ Note that these links work only on github, not on VSCode marketplace:
 - [functions](#functions)
 - [iterables](#iterables)
 - [objects and classes](#objects-and-classes)
-- [returning values](#returning-values)
-- [types](#types)
+- [return values](#return-values)
+<!--- [types](#types)-->
 - [promises](#promises)
 - [ES6 modules](#es6-modules)
+- [Node.js modules](#nodejs)
 - [testing](#testing)
-- [console](#console)
 - [timers](#timers)
+- [miscellaneous js](#miscellaneous-js)
+- [console](#console)
 - [DOM](#dom)
-- [Node.js](#nodejs)
-- [miscellaneous](#miscellaneous)
 
 ### Declarations
 
@@ -98,6 +98,7 @@ const {${1:name}} = ${2:value}
 ```js
 const ${1:name} = yield ${2:value}
 ```
+
 
 ### Flow Control
 
@@ -198,6 +199,7 @@ try {
 }
 ```
 
+
 ### Functions
 
 #### `f⇥` anonymous function
@@ -267,6 +269,7 @@ function* ${1:name}(${1:arguments}) {
 }
 ```
 
+
 ### Iterables
 
 #### `fe⇥` forEach loop
@@ -318,7 +321,42 @@ ${1:iterable}.some((${2:item}) => {
 })
 ```
 
+
 ### Objects and classes
+
+#### `ok` Object.keys
+```js
+Object.keys(${1:obj})
+```
+
+#### `oc` Object.create
+```js
+Object.create(${1:obj})
+```
+
+#### `oa` Object.assign
+```js
+Object.assign(${1:dest}, ${2:source})
+```
+
+#### `og` Object.getOwnPropertyDescriptor
+```js
+Object.getOwnPropertyDescriptor(${1:dest}, '${2:prop}')
+```
+
+#### `od` Object.defineProperty
+```js
+Object.defineProperty(${1:dest}, '${2:prop}', {
+  ${0}
+})
+```
+
+#### `proto⇥` prototype method
+```js
+${1:Class}.prototype.${2:methodName} = function (${3:arguments}) {
+  ${0}
+}
+```
 
 #### `cs⇥` class (ES6)
 ```js
@@ -338,7 +376,6 @@ class ${1:name} extends ${2:base} {
   }
 }
 ```
-
 
 #### `m⇥` method (ES6 syntax)
 ```js
@@ -371,92 +408,45 @@ set ${1:property} (${2:value}) {
 }
 ```
 
-#### `proto⇥` prototype method
-```js
-${1:Class}.prototype.${2:methodName} = function (${3:arguments}) {
-  ${0}
-}
-```
 
-#### `ok` Object.keys
-```js
-Object.keys(${1:obj})
-```
+### Return values
 
-#### `oc` Object.create
-```js
-Object.create(${1:obj})
-```
-
-#### `oa` Object.assign
-```js
-Object.assign(${1:dest}, ${2:source})
-```
-
-#### `og` Object.getOwnPropertyDescriptor
-```js
-Object.getOwnPropertyDescriptor(${1:dest}, '${2:prop}')
-```
-
-#### `od` Object.defineProperty
-```js
-Object.defineProperty(${1:dest}, '${2:prop}', {
-  ${0}
-})
-```
-
-### Returning values
-
-#### `r⇥` return
+#### `rt⇥` return
 ```js
 return ${0}
 ```
 
-#### `rt⇥` return this
+#### `rtt⇥` return this
 ```js
 return this
 ```
 
-#### `rn⇥` return null
+#### `rtn⇥` return null
 ```js
 return null
 ```
 
-#### `ro⇥` return new object
+#### `rto⇥` return new object
 ```js
 return {
   ${0}
 }
 ```
 
-#### `ra⇥` return new array
+#### `rta⇥` return new array
 ```js
 return [
   ${0}
 ]
 ```
 
-#### `rp⇥` return Promise (ES6)
+#### `rtp⇥` return Promise (ES6)
 ```js
 return new Promise((resolve, reject) => {
   ${0}
 })
 ```
 
-#### `tof⇥` typeof comparison
-```js
-typeof ${1:source} === '${2:undefined}'
-```
-
-#### `iof⇥` instanceof comparison
-```js
-${1:source} instanceof ${2:Object}
-```
-
-#### `ia⇥` isArray
-```js
-Array.isArray(${1:source})
-```
 
 ### Promises
 
@@ -480,6 +470,12 @@ ${1:promise}.catch((${2:err}) => {
   ${0}
 })
 ```
+
+#### `a⇥` await
+```js
+await ${0}
+```
+
 
 ### ES6 modules
 
@@ -518,7 +514,60 @@ import ${1:*} as ${2:name} from '${3:module}'
 import {$1} from '${2:module}'
 ```
 
-### BDD testing (Mocha, Jasmine, etc.)
+
+### Node.js modules
+
+#### `rq⇥` require a module
+```js
+require('${1:module}')
+```
+#### `cr⇥` require and assign a module
+```js
+const ${1:module} = require('${1:module}')
+```
+
+#### `em⇥` export member
+```js
+exports.${1:name} = ${2:value}
+```
+
+#### `me⇥` module.exports
+```js
+module.exports = ${1:name}
+```
+
+#### `cb⇥` Node.js style callback
+```js
+function (err, ${1:value}) {
+  if (err) throw err
+  t${0}
+}
+```
+
+#### `on⇥` attach an event handler
+```js
+${1:emitter}.on('${2:event}', (${3:arguments}) => {
+  ${0}
+})
+```
+
+
+### Testing (Comparisons, Mocha, Jasmine, etc.)
+
+#### `ia⇥` isArray
+```js
+Array.isArray(${1:source})
+```
+
+#### `tof⇥` typeof comparison
+```js
+typeof ${1:source} === '${2:undefined}'
+```
+
+#### `iof⇥` instanceof comparison
+```js
+${1:source} instanceof ${2:Object}
+```
 
 #### `desc⇥` describe
 ```js
@@ -567,6 +616,7 @@ afterEach(function () {
 })
 ```
 
+
 ### Timers
 
 #### `st⇥` setTimeout
@@ -590,6 +640,43 @@ setImmediate(() => {
 })
 ```
 
+
+### Miscellaneous JS
+
+#### `us⇥` use strict
+```js
+'use strict'
+```
+
+#### `js⇥` JSON Stringify
+```js
+JSON.stringify($0)
+```
+
+#### `jp⇥` JSON Parse
+```js
+JSON.parse($0)
+```
+
+
+### Console
+
+#### `cl⇥` console.log
+```js
+console.log(${0})
+```
+
+#### `ce⇥` console.error
+```js
+console.error(${0})
+```
+
+#### `cw⇥` console.warn
+```js
+console.warn(${0})
+```
+
+
 ### DOM
 
 #### `ae⇥` addEventListener
@@ -610,7 +697,6 @@ ev.preventDefault()
 ev.stopPropagation()
 return false
 ```
-
 
 #### `gi⇥` getElementById
 ```js
@@ -695,81 +781,6 @@ ${1:document}.setAttribute('${2:attr}', ${3:value});
 
 ```js
 ${1:document}.removeAttribute('${2:attr}');
-```
-
-### Node.js
-
-#### `cb⇥` Node.js style callback
-```js
-function (err, ${1:value}) {
-  if (err) throw err
-  t${0}
-}
-```
-
-#### `rq⇥` require a module
-```js
-require('${1:module}')
-```
-#### `cr⇥` require and assign a module
-```js
-const ${1:module} = require('${1:module}')
-```
-
-#### `em⇥` export member
-```js
-exports.${1:name} = ${2:value}
-```
-
-#### `me⇥` module.exports
-```js
-module.exports = ${1:name}
-```
-
-#### `on⇥` attach an event handler
-```js
-${1:emitter}.on('${2:event}', (${3:arguments}) => {
-  ${0}
-})
-```
-
-### Miscellaneous
-
-#### `us⇥` use strict
-```js
-'use strict'
-```
-
-#### `js⇥` JSON Stringify
-```js
-JSON.stringify($0)
-```
-
-#### `jp⇥` JSON Parse
-```js
-JSON.parse($0)
-```
-
-#### `a⇥` await
-```js
-await ${0}
-```
-
-### Console
-
-#### `cl⇥` console.log
-```js
-console.log(${0})
-```
-
-#### `ce⇥` console.error
-```js
-console.error(${0})
-```
-
-#### `cw⇥` console.warn
-```js
-console.warn(${0})
 ```
 
 # License

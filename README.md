@@ -54,22 +54,27 @@ Note that these links work only on github, not on VSCode marketplace:
 
 ### Declarations
 
-#### `v⇥` var statement
+<!--#### `v⇥` var statement
 ```js
 var ${1:name}
-```
+```-->
 
-#### `va⇥` var assignment
+<!--#### `l⇥` let statement
+```js
+let ${1:name}
+```-->
+
+<!--#### `c⇥` const statement
+```js
+const ${1:name}
+```-->
+
+#### `vas⇥` var assignment
 ```js
 var ${1:name} = ${2:value}
 ```
 
-#### `l⇥` let statement
-```js
-let ${1:name}
-```
-
-#### `la⇥` let assignment
+#### `las⇥` let assignment
 ```js
 let ${1:name} = ${2:value}
 ```
@@ -79,19 +84,33 @@ let ${1:name} = ${2:value}
 let ${1:name} = yield ${2:value}
 ```
 
-#### `c⇥` const statement
-```js
-const ${1:name}
-```
-
-#### `ca⇥` const assignment
+#### `cna⇥` const assignment
 ```js
 const ${1:name} = ${2:value}
 ```
 
-#### `cd⇥` const from destructuring
+#### `cno⇥` const object
+```js
+const ${1:name} = {
+  ${0}
+}
+```
+
+#### `cad⇥` const object destructuring
 ```js
 const {${1:name}} = ${2:value}
+```
+
+#### `cna⇥` const array
+```js
+const ${1:name} = [
+  ${0}
+]
+```
+
+#### `cad⇥` const array destructuring
+```js
+const [{${1:name}}] = ${2:value}
 ```
 
 #### `cy⇥` const yielded assignment
@@ -102,14 +121,14 @@ const ${1:name} = yield ${2:value}
 
 ### Flow Control
 
-#### `i⇥` if statement
+#### `ifs⇥` if statement
 ```js
 if (${1:condition}) {
   ${0}
 }
 ```
 
-#### `el⇥` else statement
+#### `eel⇥` and `ee⇥` else statement
 ```js
 else {
   ${0}
@@ -132,6 +151,14 @@ else if (${1:condition}) {
 }
 ```
 
+#### `lif⇥` let - if statement
+```js
+let ${1}
+if (${0}) {
+  ${1} = ${2}
+}
+```
+
 #### `fl⇥` for loop (ES6)
 ```js
 for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length ${1:i} < ${2:len}; ${1:i}++) {
@@ -139,7 +166,7 @@ for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length ${1:i} < ${2:len}; ${1:i}++
 }
 ```
 
-#### `fi⇥` for in loop (ES6)
+#### `fli⇥` for in loop (ES6)
 ```js
 for (let ${1:key} in ${2:source}) {
   if (${2:source}.hasOwnProperty(${1:key})) {
@@ -148,7 +175,7 @@ for (let ${1:key} in ${2:source}) {
 }
 ```
 
-#### `fo⇥` for of loop (ES6)
+#### `flo⇥` for of loop (ES6)
 ```js
 for (let ${1:key} of ${2:source}) {
   ${0}
@@ -199,17 +226,46 @@ try {
 }
 ```
 
+#### `tn⇥` const yielded assignment
+```js
+throw new ${0:error}
+```
+
 
 ### Functions
 
-#### `f⇥` anonymous function
+#### `fn⇥` anonymous function
 ```js
 function (${1:arguments}) {${0}}
 ```
 
-#### `fn⇥` named function
+#### `fnn⇥` named function
 ```js
 function ${1:name}(${2:arguments}) {
+  ${0}
+}
+```
+
+#### `af⇥` arrow function (ES6)
+```js
+(${1:arguments}) => {${2:statement}}
+```
+
+#### `afe⇥` arrow function empty / no braces (ES6)
+```js
+(${1:arguments}) => ${2:statement}
+```
+
+#### `gf⇥` generator function (ES6)
+```js
+function* (${1:arguments}) {
+  ${0}
+}
+```
+
+#### `gfn⇥` named generator function (ES6)
+```js
+function* ${1:name}(${1:arguments}) {
   ${0}
 }
 ```
@@ -228,7 +284,7 @@ async function (${1:arguments}) {
 })(${2})
 ```
 
-#### `fa⇥` function apply
+#### `fap⇥` function apply
 ```js
 ${1:fn}.apply(${2:this}, ${3:arguments})
 ```
@@ -243,36 +299,10 @@ ${1:fn}.call(${2:this}, ${3:arguments})
 ${1:fn}.bind(${2:this}, ${3:arguments})
 ```
 
-#### `af⇥` arrow function (ES6)
-```js
-(${1:arguments}) => ${2:statement}
-```
-
-#### `afb⇥` arrow function with body (ES6)
-```js
-(${1:arguments}) => {
-  ${0}
-}
-```
-
-#### `gf⇥` generator function (ES6)
-```js
-function* (${1:arguments}) {
-  ${0}
-}
-```
-
-#### `gfn⇥` named generator function (ES6)
-```js
-function* ${1:name}(${1:arguments}) {
-  ${0}
-}
-```
-
 
 ### Iterables
 
-#### `fe⇥` forEach loop
+#### `fel⇥` forEach loop
 ```js
 ${1:iterable}.forEach((${2:item}) => {
   ${0}
@@ -377,28 +407,35 @@ class ${1:name} extends ${2:base} {
 }
 ```
 
-#### `m⇥` method (ES6 syntax)
+#### `cc⇥` constructor (ES6 syntax)
+```js
+constructor () {
+  ${0}
+}
+```
+
+#### `cm⇥` method (ES6 syntax)
 ```js
 ${1:method} (${2:arguments}) {
   ${0}
 }
 ```
 
-#### `get⇥` getter (ES6 syntax)
+#### `cget⇥` getter (ES6 syntax)
 ```js
 get ${1:property} () {
   ${0}
 }
 ```
 
-#### `set⇥` setter (ES6 syntax)
+#### `cset⇥` setter (ES6 syntax)
 ```js
 set ${1:property} (${2:value}) {
   ${0}
 }
 ```
 
-#### `gs⇥` getter and setter (ES6 syntax)
+#### `cgs⇥` getter and setter (ES6 syntax)
 ```js
 get ${1:property} () {
   ${0}
@@ -457,29 +494,49 @@ new Promise((resolve, reject) => {
 })
 ```
 
-#### `then⇥` Promise.then
+#### `pall⇥` Promise.all
+```js
+Promise.all([${1:value}])
+```
+
+#### `presolve⇥` Promise.resolve
+```js
+Promise.resolve(${1:value})
+```
+
+#### `preject⇥` Promise.reject
+```js
+Promise.reject(${1:value})
+```
+
+#### `pthen⇥` Promise.then
 ```js
 ${1:promise}.then((${2:value}) => {
   ${0}
 })
 ```
 
-#### `catch⇥` Promise.catch
+#### `pcatch⇥` Promise.catch
 ```js
 ${1:promise}.catch((${2:err}) => {
   ${0}
 })
 ```
 
-#### `a⇥` await
+#### `awt⇥` await
 ```js
 await ${0}
+```
+
+#### `yd⇥` yield
+```js
+yield ${0}
 ```
 
 
 ### ES6 modules
 
-#### `e⇥` module export
+<!--#### `e⇥` module export
 ```js
 export ${1:member}
 ```
@@ -512,7 +569,7 @@ import ${1:*} as ${2:name} from '${3:module}'
 #### `id⇥` module import destructuring
 ```js
 import {$1} from '${2:module}'
-```
+```-->
 
 
 ### Node.js modules
@@ -521,17 +578,17 @@ import {$1} from '${2:module}'
 ```js
 require('${1:module}')
 ```
-#### `cr⇥` require and assign a module
+#### `crq⇥` require and assign a module
 ```js
 const ${1:module} = require('${1:module}')
 ```
 
-#### `em⇥` export member
+#### `eme⇥` export member
 ```js
 exports.${1:name} = ${2:value}
 ```
 
-#### `me⇥` module.exports
+#### `moe⇥` module.exports
 ```js
 module.exports = ${1:name}
 ```
@@ -544,27 +601,20 @@ function (err, ${1:value}) {
 }
 ```
 
-#### `on⇥` attach an event handler
-```js
-${1:emitter}.on('${2:event}', (${3:arguments}) => {
-  ${0}
-})
-```
-
 
 ### Testing (Comparisons, Mocha, Jasmine, etc.)
 
-#### `ia⇥` isArray
+#### `iarr⇥` isArray
 ```js
 Array.isArray(${1:source})
 ```
 
-#### `tof⇥` typeof comparison
+#### `tyo⇥` typeof comparison
 ```js
 typeof ${1:source} === '${2:undefined}'
 ```
 
-#### `iof⇥` instanceof comparison
+#### `ino⇥` instanceof comparison
 ```js
 ${1:source} instanceof ${2:Object}
 ```
@@ -619,14 +669,14 @@ afterEach(function () {
 
 ### Timers
 
-#### `st⇥` setTimeout
+#### `sti⇥` setTimeout
 ```js
 setTimeout(() => {
   ${0}
 }, ${1:delay})
 ```
 
-#### `si⇥` setInterval
+#### `sin⇥` setInterval
 ```js
 setTimeout(() => {
   ${0}
@@ -643,7 +693,7 @@ setImmediate(() => {
 
 ### Miscellaneous JS
 
-#### `us⇥` use strict
+#### `ust⇥` use strict
 ```js
 'use strict'
 ```
@@ -661,7 +711,7 @@ JSON.parse($0)
 
 ### Console
 
-#### `cl⇥` console.log
+<!--#### `cl⇥` console.log
 ```js
 console.log(${0})
 ```
@@ -674,21 +724,28 @@ console.error(${0})
 #### `cw⇥` console.warn
 ```js
 console.warn(${0})
-```
+```-->
 
 
 ### DOM
 
-#### `ae⇥` addEventListener
+#### `aev⇥` addEventListener
 ```js
 ${1:document}.addEventListener('${2:event}', ${3:ev} => {
   ${0}
 })
 ```
 
-#### `rel⇥` removeEventListener
+#### `rev⇥` removeEventListener
 ```js
 ${1:document}.removeEventListener('${2:event}', ${3:listener})
+```
+
+#### `evon⇥` attach an event handler
+```js
+${1:emitter}.on('${2:event}', (${3:arguments}) => {
+  ${0}
+})
 ```
 
 #### `evc` dom event cancel default and propagation
@@ -735,34 +792,34 @@ ${1:document}.createDocumentFragment(${2:elem});
 ${1:document}.createElement(${2:elem});
 ```
 
-#### `ac⇥` appendChild
+#### `ach⇥` appendChild
 
 ```js
 ${1:document}.appendChild(${2:elem});
 ```
 
-#### `rc⇥` removeChild
+#### `rch⇥` removeChild
 
 ```js
 ${1:document}.removeChild(${2:elem});
 ```
 
-#### `cla⇥` classList.add
+#### `clad⇥` classList.add
 
 ```js
 ${1:document}.classList.add('${2:class}');
-```
-
-#### `ct⇥` classList.toggle
-
-```js
-${1:document}.classList.toggle('${2:class}');
 ```
 
 #### `clr⇥` classList.remove
 
 ```js
 ${1:document}.classList.remove('${2:class}');
+```
+
+#### `clt⇥` classList.toggle
+
+```js
+${1:document}.classList.toggle('${2:class}');
 ```
 
 #### `ga⇥` getAttribute

@@ -1,61 +1,61 @@
 {
 	// declarations
-	"var statement": {
-		"prefix": "v",
-		"body": "var ${1:name}"
-	},
+	// "var statement": {
+	// 	"prefix": "v",
+	// 	"body": "var ${1:name}"
+	// },
+	// "let statement": {
+	// 	"prefix": "l",
+	// 	"body": "let ${1:name}"
+	// },
+	// "const statement": {
+	// 	"prefix": "c",
+	// 	"body": "const ${1:name}"
+	// },
 	"var assignment": {
-		"prefix": "va",
+		"prefix": "vas",
 		"body": "var ${1:name} = ${2:value}"
 	},
-	"let statement": {
-		"prefix": "l",
-		"body": "let ${1:name}"
-	},
 	"let assignment": {
-		"prefix": "la",
+		"prefix": "las",
 		"body": "let ${1:name} = ${2:value}"
 	},
-	"const statement": {
-		"prefix": "c",
-		"body": "const ${1:name}"
-	},
-	"const statement from destructuring": {
-		"prefix": "cd",
-		"body": "const {${1:name}} = ${2:value}"
-	},
-	"const assignment": {
-		"prefix": "ca",
-		"body": "const ${1:name} = ${2:value}"
-	},
-	"const assignment yielded": {
-		"prefix": "cy",
-		"body": "const ${1:name} = yield ${2:value}"
-	},
-	"let assignment yielded": {
+	"let yielded assignment": {
 		"prefix": "ly",
 		"body": "let ${1:name} = yield ${2:value}"
 	},
+	"const assignment": {
+		"prefix": "cna",
+		"body": "const ${1:name} = ${2:value}"
+	},
 	"const object": {
-		"prefix": "co",
+		"prefix": "cno",
 		"body": "const ${1:name} = {\n\t${0}\n}"
 	},
+	"const object destructuring": {
+		"prefix": "cod",
+		"body": "const {${1:name}} = ${2:value}"
+	},
 	"const array": {
-		"prefix": "car",
+		"prefix": "cna",
 		"body": "const ${1:name} = [\n\t${0}\n]"
+	},
+	"const array destructuring": {
+		"prefix": "cad",
+		"body": "const [{${1:name}}] = ${2:value}"
+	},
+	"const yielded assignment": {
+		"prefix": "cy",
+		"body": "const ${1:name} = yield ${2:value}"
 	},
 
 	//flow control
-	"let and if statement": { //todo fix lif
-		"prefix": "lif",
-		"body": "let ${0} \n if (${2:condition}) {\n\t${1}\n}"
-	},
 	"if statement": {
-		"prefix": "i",
+		"prefix": "ifs",
 		"body": "if (${1:condition}) {\n\t${0}\n}"
 	},
 	"else statement": {
-		"prefix": "el",
+		"prefix": "eel",
 		"body": "else {\n\t${0}\n}"
 	},
 	"if/else statement": {
@@ -66,29 +66,29 @@
 		"prefix": "ei",
 		"body": "else if (${1:condition}) {\n\t${0}\n}"
 	},
+	"let - if statement": {
+		"prefix": "lif",
+		"body": "let ${1}\nif (${0}) {\n\t${1} = ${2}\n}"
+	},
 	"for loop": {
 		"prefix": "fl",
 		"body": "for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {\n\t${0}\n}"
 	},
 	"for in loop": {
-		"prefix": "fi",
+		"prefix": "fli",
 		"body": "for (let ${1:key} in ${2:source}) {\n\tif (${2:source}.hasOwnProperty(${1:key})) {\n\t\t${0}\n\t}\n}"
 	},
 	"for of loop": {
-		"prefix": "fo",
+		"prefix": "flo",
 		"body": "for (let ${1:key} of ${2:source}) {\n\t${0}\n}"
-	},
-	"while iteration decrementing": {
-		"prefix": "wid",
-		"body": "let ${1:array}Index = ${1:array}.length\nwhile (${1:array}Index--) {\n\t${0}\n}"
 	},
 	"while loop": {
 		"prefix": "wl",
 		"body": "while (${1:condition}) {\n\t${0}\n}"
 	},
-	"throw new Error": {
-		"prefix": "tn",
-		"body": "throw new ${0:error}"
+	"while iteration decrementing": {
+		"prefix": "wid",
+		"body": "let ${1:array}Index = ${1:array}.length\nwhile (${1:array}Index--) {\n\t${0}\n}"
 	},
 	"try/catch": {
 		"prefix": "tc",
@@ -102,15 +102,35 @@
 		"prefix": "tcf",
 		"body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n} finally {\n\t\n}"
 	},
+	"throw new Error": {
+		"prefix": "tn",
+		"body": "throw new ${0:error}"
+	},
 
 	// functions
 	"anonymous function": {
-		"prefix": "f",
+		"prefix": "fn",
 		"body": "function (${1:arguments}) {${0}}"
 	},
 	"named function": {
-		"prefix": "fn",
+		"prefix": "fnn",
 		"body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+	},
+	"arrow function": {
+		"prefix": "af",
+		"body": "(${1}) => {${2:statement}}"
+	},
+	"arrow function empty": {
+		"prefix": "afe",
+		"body": "(${1}) => ${2:statement}"
+	},
+	"generator function": {
+		"prefix": "gf",
+		"body": "function* (${1:arguments}) {\n\t${0}\n}"
+	},
+	"named generator": {
+		"prefix": "gfn",
+		"body": "function* ${1:name}(${2:arguments}) {\n\t${0}\n}"
 	},
 	"async function": {
 		"prefix": "asf",
@@ -121,7 +141,7 @@
 		"body": ";(function (${1:arguments}) {\n\t${0}\n})(${2})"
 	},
 	"function apply": {
-		"prefix": "fa",
+		"prefix": "fap",
 		"body": "${1:fn}.apply(${2:this}, ${3:arguments})"
 	},
 	"function call": {
@@ -132,26 +152,10 @@
 		"prefix": "fb",
 		"body": "${1:fn}.bind(${2:this}, ${3:arguments})"
 	},
-	"arrow function": {
-		"prefix": "af",
-		"body": "(${1:arguments}) => ${2:statement}"
-	},
-	"arrow function with body": {
-		"prefix": "afb",
-		"body": "(${1:arguments}) => {\n\t${0}\n}"
-	},
-	"generator function": {
-		"prefix": "gf",
-		"body": "function* (${1:arguments}) {\n\t${0}\n}"
-	},
-	"named generator": {
-		"prefix": "gfn",
-		"body": "function* ${1:name}(${2:arguments}) {\n\t${0}\n}"
-	},
 
 	// iterables
 	"forEach loop": {
-		"prefix": "fe",
+		"prefix": "fel",
 		"body": "${1:iterable}.forEach((${2:item}) => {\n\t${0}\n})"
 	},
 	"map": {
@@ -200,36 +204,37 @@
 		"prefix": "ok",
 		"body": "Object.keys(${1:obj})"
 	},
-	"class": {
-		"prefix": "cs",
-		"body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}"
-	},
 	"prototype method": {
 		"prefix": "proto",
 		"body": "${1:Class}.prototype.${2:method} = function (${3:arguments}) {\n\t${0}\n}"
+	},
+
+	"class": {
+		"prefix": "cs",
+		"body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}"
 	},
 	"class extends": {
 		"prefix": "csx",
 		"body": "class ${1:name} extends ${2:base} {\n\tconstructor (${3:arguments}) {\n\t\tsuper(${3:arguments})\n\t\t${0}\n\t}\n}"
 	},
 	"constructor": {
-		"prefix": "cn",
+		"prefix": "cc",
 		"body": "constructor () {\n\t${0}\n}"
 	},
 	"method": {
-		"prefix": "m",
+		"prefix": "cm",
 		"body": "${1:method} (${2:arguments}) {\n\t${0}\n}"
 	},
 	"getter": {
-		"prefix": "get",
+		"prefix": "cget",
 		"body": "get ${1:property} () {\n\t${0}\n}"
 	},
 	"setter": {
-		"prefix": "set",
+		"prefix": "cset",
 		"body": "set ${1:property} (${2:value}) {\n\t${0}\n}"
 	},
 	"getter + setter": {
-		"prefix": "gs",
+		"prefix": "cgs",
 		"body": "get ${1:property} () {\n\t${0}\n}\nset ${1:property} (${2:value}) {\n\t\n}"
 	},
 
@@ -258,69 +263,43 @@
 		"prefix": "rtp",
 		"body": "return new Promise((resolve, reject) => {\n\t${0}\n})"
 	},
-	"yield": {
-		"prefix": "y",
-		"body": "yield ${0}"
-	},
 
 	// Promises
-	"Node callback": {
-		"prefix": "cb",
-		"body": "function (err, ${1:value}) {\n\tif (err) throw err\n\t${0}\n}"
+	// "Promise": {
+	// 	"prefix": "ppro",
+	// 	"body": "Promise"
+	// },
+	"new Promise": {
+		"prefix": "pnew",
+		"body": "new Promise((resolve, reject) => {\n\t${0}\n})"
 	},
 	"Promise.all": {
-		"prefix": "pra",
+		"prefix": "pall",
 		"body": "Promise.all([${1:value}])"
 	},
 	"Promise.resolve": {
-		"prefix": "prs",
+		"prefix": "presolve",
 		"body": "Promise.resolve(${1:value})"
 	},
 	"Promise.reject": {
-		"prefix": "prj",
+		"prefix": "preject",
 		"body": "Promise.reject(${1:value})"
 	},
-	"Promise": {
-		"prefix": "pro",
-		"body": "Promise"
-	},
-	"new Promise": {
-		"prefix": "np",
-		"body": "new Promise((resolve, reject) => {\n\t${0}\n})"
-	},
 	"Promise.then": {
-		"prefix": "then",
+		"prefix": "pthen",
 		"body": "${1:promise}.then((${2:value}) => {\n\t${0}\n})"
 	},
 	"Promise.catch": {
-		"prefix": "catch",
+		"prefix": "pcatch",
 		"body": "${1:promise}.catch(${2:err} => {\n\t${0}\n})"
 	},
 	"await": {
-		"prefix": "a",
+		"prefix": "awt",
 		"body": "await ${0}"
 	},
-
-	// node.js modules
-	"require": {
-		"prefix": "rq",
-		"body": "require('${1:module}')"
-	},
-	"const module = require('module')": {
-		"prefix": "cr",
-		"body": "const ${1:module} = require('${1:module}')"
-	},
-	"exports.member": {
-		"prefix": "em",
-		"body": "exports.${1:member} = ${2:value}"
-	},
-	"module.exports": {
-		"prefix": "me",
-		"body": "module.exports = ${1:name}"
-	},
-	"module as class": {
-		"prefix": "mec",
-		"body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}\n\nmodule.exports = ${1:name}\n"
+	"yield": {
+		"prefix": "yd",
+		"body": "yield ${0}"
 	},
 
 	// ES6 modules
@@ -353,18 +332,44 @@
 	// 	"body": "import {$1} from '${2:module}'"
 	// },
 
+	// node.js modules
+	"require": {
+		"prefix": "rq",
+		"body": "require('${1:module}')"
+	},
+	"const module = require('module')": {
+		"prefix": "crq",
+		"body": "const ${1:module} = require('${1:module}')"
+	},
+	"exports.member": {
+		"prefix": "eme",
+		"body": "exports.${1:member} = ${2:value}"
+	},
+	"module.exports": {
+		"prefix": "moe",
+		"body": "module.exports = ${1:name}"
+	},
+	"module as class": {
+		"prefix": "mec",
+		"body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}\n\nmodule.exports = ${1:name}\n"
+	},
+	"Node callback": {
+		"prefix": "cb",
+		"body": "function (err, ${1:value}) {\n\tif (err) throw err\n\t${0}\n}"
+	},
+
 	//testing
+	"Array.isArray()": {
+		"prefix": "iarr",
+		"body": "Array.isArray(${1:source})"
+	},
 	"typeof": {
-		"prefix": "tof",
+		"prefix": "tyo",
 		"body": "typeof ${1:source} === '${2:undefined}'"
 	},
 	"instanceof": {
-		"prefix": "iof",
+		"prefix": "ino",
 		"body": "${1:source} instanceof ${2:Object}"
-	},
-	"Array.isArray()": {
-		"prefix": "ia",
-		"body": "Array.isArray(${1:source})"
 	},
 	"describe": {
 		"prefix": "desc",
@@ -397,11 +402,11 @@
 
 	// timers
 	"setTimeout": {
-		"prefix": "st",
+		"prefix": "sti",
 		"body": "setTimeout(() => {\n\t${0}\n}, ${1:delay})"
 	},
 	"setInterval": {
-		"prefix": "si",
+		"prefix": "sin",
 		"body": "setInterval(() => {\n\t${0}\n}, ${1:delay})"
 	},
 	"setImmediate": {
@@ -411,7 +416,7 @@
 
 	// Miscellaneous JS
 	"use strict": {
-		"prefix": "us",
+		"prefix": "ust",
 		"body": "'use strict'"
 	},
 	"JSON.stringify()": {
@@ -438,21 +443,21 @@
 	// },
 
 	// DOM
+	"addEventListener": {
+		"prefix": "aev",
+		"body": "${1:document}.addEventListener('${2:event}', ${3:ev} => {\n\t${0}\n})"
+	},
+	"removeEventListener": {
+		"prefix": "rev",
+		"body": "${1:document}.removeEventListener('${2:event}', ${3:listener})"
+	},
 	"event handler": {
-		"prefix": "on",
+		"prefix": "evon",
 		"body": "${1:emitter}.on('${2:event}', (${3:arguments}) => {\n\t${0}\n});"
 	},
 	"dom event cancel default and propagation": {
 		"prefix": "evc",
 		"body": "ev.preventDefault()\nev.stopPropagation()\nreturn false"
-	},
-	"addEventListener": {
-		"prefix": "ae",
-		"body": "${1:document}.addEventListener('${2:event}', ${3:ev} => {\n\t${0}\n})"
-	},
-	"removeEventListener": {
-		"prefix": "rel",
-		"body": "${1:document}.removeEventListener('${2:event}', ${3:listener})"
 	},
 	"getElementById": {
 		"prefix": "gi",
@@ -482,8 +487,16 @@
 		"prefix": "cel",
 		"body": "${1:document}.createElement(${2:elem})"
 	},
+	"appendChild": {
+		"prefix": "ach",
+		"body": "${1:el}.appendChild(${2:elem})"
+	},
+	"removeChild": {
+		"prefix": "rch",
+		"body": "${1:el}.removeChild(${2:elem})"
+	},
 	"classList.add": {
-		"prefix": "cla",
+		"prefix": "clad",
 		"body": "${1:el}.classList.add('${2:class}')"
 	},
 	"classList.remove": {
@@ -491,7 +504,7 @@
 		"body": "${1:el}.classList.remove('${2:class}')"
 	},
 	"classList.toggle": {
-		"prefix": "ct",
+		"prefix": "clt",
 		"body": "${1:el}.classList.toggle('${2:class}')"
 	},
 	"getAttribute": {
@@ -505,13 +518,5 @@
 	"setAttribute": {
 		"prefix": "sa",
 		"body": "${1:el}.setAttribute('${2:attr}', ${3:value})"
-	},
-	"appendChild": {
-		"prefix": "ac",
-		"body": "${1:el}.appendChild(${2:elem})"
-	},
-	"removeChild": {
-		"prefix": "rc",
-		"body": "${1:el}.removeChild(${2:elem})"
 	}
 }

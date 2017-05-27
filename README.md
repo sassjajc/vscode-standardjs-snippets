@@ -130,14 +130,14 @@ if (${1:condition}) {
 }
 ```
 
-#### `eel⇥` and `ee⇥` else statement
+#### `ees⇥` and `ee⇥` else statement
 ```js
 else {
   ${0}
 }
 ```
 
-#### `ife⇥` else statement
+#### `ies⇥` else statement
 ```js
 if (${1:condition}) {
   ${0}
@@ -146,14 +146,14 @@ if (${1:condition}) {
 }
 ```
 
-#### `ei⇥` else if statement
+#### `eis⇥` and `ei⇥` else if statement
 ```js
 else if (${1:condition}) {
   ${0}
 }
 ```
 
-#### `lif⇥` let - if statement
+#### `letif⇥` and `lei⇥` let - if statement
 ```js
 let ${1}
 if (${0}) {
@@ -168,7 +168,7 @@ for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length ${1:i} < ${2:len}; ${1:i}++
 }
 ```
 
-#### `fli⇥` for in loop (ES6)
+#### `flin⇥` for in loop (ES6)
 ```js
 for (let ${1:key} in ${2:source}) {
   if (${2:source}.hasOwnProperty(${1:key})) {
@@ -177,7 +177,7 @@ for (let ${1:key} in ${2:source}) {
 }
 ```
 
-#### `flo⇥` for of loop (ES6)
+#### `flof⇥` for of loop (ES6)
 ```js
 for (let ${1:key} of ${2:source}) {
   ${0}
@@ -489,7 +489,7 @@ return new Promise((resolve, reject) => {
 
 ### Promises
 
-#### `pnew⇥` new Promise (ES6)
+#### `pnew⇥` and `pn⇥` new Promise (ES6)
 ```js
 new Promise((resolve, reject) => {
   ${0}
@@ -501,24 +501,24 @@ new Promise((resolve, reject) => {
 Promise.all([${1:value}])
 ```
 
-#### `presolve⇥` Promise.resolve
+#### `presolve⇥` and `prs⇥` Promise.resolve
 ```js
 Promise.resolve(${1:value})
 ```
 
-#### `preject⇥` Promise.reject
+#### `preject⇥` and `prj⇥` Promise.reject
 ```js
 Promise.reject(${1:value})
 ```
 
-#### `pthen⇥` Promise.then
+#### `pthen⇥` and `pth⇥` Promise.then
 ```js
 ${1:promise}.then((${2:value}) => {
   ${0}
 })
 ```
 
-#### `pcatch⇥` Promise.catch
+#### `pcatch⇥` and `pc⇥` Promise.catch
 ```js
 ${1:promise}.catch((${2:err}) => {
   ${0}
@@ -543,22 +543,22 @@ yield ${0}
 import ${2:moduleName} from '${1:module}'$0
 ```
 
-#### `id⇥` import member(s) of module with destructuring
+#### `imm⇥` import member(s) of module with destructuring
 ```js
 import { $2 } from '${1:module}'$0
 ```
 
-#### `ia⇥` import member(s) of module in a local alias with destructuring
+#### `imma⇥` import member(s) of module in a local alias with destructuring
 ```js
 import { ${2:originalName} as ${3:alias} } from '${1:module}'$0
 ```
 
-#### `ia⇥` import entire module without bindings
+#### `imwb⇥` import entire module without bindings
 ```js
 import '${1:module}'$0
 ```
 
-#### `ia⇥` import all exported bindings in a local alias
+#### `ima⇥` import all exported bindings in a local alias
 ```js
 import * as ${2:alias} from '${1:module}'$0
 ```

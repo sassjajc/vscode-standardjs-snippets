@@ -627,7 +627,7 @@ function (err, ${1:value}) {
 ```
 
 
-### Testing (Comparisons, Mocha, Jasmine, etc.)
+### Testing
 
 #### `iarr⇥` isArray
 ```js
@@ -644,49 +644,150 @@ typeof ${1:source} === '${2:undefined}'
 ${1:source} instanceof ${2:Object}
 ```
 
-#### `desc⇥` describe
+#### `expect⇥` expect (multiple libraries)
 ```js
-describe('${1:description}', function () {
-  ${0}
-})
+expect('${1:description}')${0}
 ```
-#### `its⇥` synchronous "it"
+
+### Jest using anonymous arrow functions
+
+#### `adescribe⇥` and `ads⇥` describe
 ```js
-it('${1:description}', function () {
-  ${0}
-})
-```
-#### `ita⇥` asynchronous "it"
-```js
-it('${1:description}', function (done) {
+describe('${1:description}', () => {
   ${0}
 })
 ```
 
-#### `bf⇥` before test suite
+#### `atest⇥` and `ate⇥` test
+```js
+test('${1:description}', () => {
+  ${0}
+})
+```
+
+#### `ait⇥` it
+```js
+it('${1:description}', () => {
+  ${0}
+})
+```
+
+#### `abfa⇥` and `aba⇥` before all
 ```js
 before(function () {
   ${0}
 })
 ```
 
-#### `bfe⇥` before each test
+#### `abfe⇥` and `abe⇥` before each
 ```js
 beforeEach(function () {
   ${0}
 })
 ```
 
-#### `aft⇥` after test suite
+#### `aafa⇥` and `aaa⇥` after all
 ```js
 after(function () {
   ${0}
 })
 ```
 
-#### `afe⇥` after each test
+#### `aafe⇥` and `aae⇥` after each
 ```js
 afterEach(function () {
+  ${0}
+})
+```
+
+### Mocha, Jasmine, ... using anonymous functions
+
+#### `fdescribe⇥` and `fd⇥` describe
+```js
+describe('${1:description}', function () {
+  ${0}
+})
+```
+
+#### `fcontext⇥` context (alias for describe)
+```js
+describe('${1:description}', function () {
+  ${0}
+})
+```
+
+#### `fsit⇥` and `fs⇥` synchronous "it"
+```js
+it('${1:description}', function () {
+  ${0}
+})
+```
+
+#### `fait⇥` asynchronous "it"
+```js
+it('${1:description}', function (done) {
+  ${0}
+})
+```
+
+#### `ftest⇥` and `ft⇥` test (alias for it)
+```js
+test('${1:description}', function (${2:done}) {
+  ${0}
+})
+```
+
+#### `fbf⇥` before
+```js
+before(function () {
+  ${0}
+})
+```
+
+#### `fbfa⇥` and `fba⇥` before all (jasmine)
+```js
+beforeAll(function () {
+  ${0}
+})
+```
+
+#### `fbfe⇥` and `fbe⇥` before each
+```js
+beforeEach(function () {
+  ${0}
+})
+```
+
+#### `faf⇥` after
+```js
+after(function () {
+  ${0}
+})
+```
+
+#### `fafa⇥` and `faa⇥` after all (jasmine)
+```js
+afterAll(function () {
+  ${0}
+})
+```
+
+#### `fafe⇥` and `fae⇥` after each
+```js
+afterEach(function () {
+  ${0}
+})
+```
+
+#### `fsuite⇥` suite with setup and teardown
+```js
+suite('${1:suiteName}', function() {
+  setup(function() {
+    ${2}
+  })
+  teardown(function() {
+    ${3}
+  })
   ${0}
 })
 ```

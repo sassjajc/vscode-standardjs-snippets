@@ -393,33 +393,97 @@
 		"prefix": "ino",
 		"body": "${1:source} instanceof ${2:Object}"
 	},
-	"describe": {
-		"prefix": "desc",
+	"expect": {
+		"prefix": "expect",
+		"body": "expect('${1:description}')${0}",
+		"description": "(expect, jasmine, jest, ...)"
+	},
+	// jest
+	"describe (jest)": {
+		"prefix": "adescribe",
+		"body": "describe('${1:description}', () => {\n\t${0}\n})"
+	},
+	"test (jest)": {
+		"prefix": "atest",
+		"body": "test('${1:description}', () => {\n\t${0}\n})",
+		"description": "Using an arrow function for jest"
+	},
+	"it (jest)": {
+		"prefix": "ait",
+		"body": "it('${1:description}', () => {\n\t${0}\n})",
+		"description": "Alias for test, using an arrow function for jest"
+	},
+	"beforeAll (jest)": {
+		"prefix": "abfa",
+		"body": "beforeAll(() => {\n\t${0}\n})",
+		"description": "beforeAll, using an arrow function for jest"
+	},
+	"beforeEach arrow": {
+		"prefix": "abfe",
+		"body": "beforeEach(() => {\n\t${0}\n})",
+		"description": "beforeEach, using an arrow function for jest"
+	},
+	"afterAll (jest)": {
+		"prefix": "aafa",
+		"body": "afterAll(() => {\n\t${0}\n})",
+		"description": "beforeAll, using an arrow function for jest"
+	},
+	"afterEach (jest)": {
+		"prefix": "aafe",
+		"body": "afterEach(() => {\n\t${0}\n})",
+		"description": "afterEach, using an arrow function for jest"
+	},
+	// mocha jasmine
+	"describe (mocha jasmine)": {
+		"prefix": "fdescribe",
 		"body": "describe('${1:description}', function () {\n\t${0}\n})"
 	},
-	"it asynchronous": {
-		"prefix": "ita",
-		"body": "it('${1:description}', function (done) {\n\t${0}\n})"
+	"context (mocha)": {
+		"prefix": "fcontext",
+		"body": "describe('${1:description}', function () {\n\t${0}\n})",
+		"description": "alias for describe (mocha)"
 	},
-	"it synchronous": {
-		"prefix": "its",
+	"synchronous it (mocha jasmine)": {
+		"prefix": "fsit",
 		"body": "it('${1:description}', function () {\n\t${0}\n})"
 	},
-	"mocha before": {
-		"prefix": "bf",
+	"asynchronous it (mocha jasmine)": {
+		"prefix": "fait",
+		"body": "it('${1:description}', function (done) {\n\t${0}\n})"
+	},
+	"test (mocha)": {
+		"prefix": "ftest",
+		"body": "test('${1:description}', function (${2:done}) {\n\t${0}\n})",
+		"description": "alias for it (mocha)"
+	},
+	"before (mocha)": {
+		"prefix": "fbf",
 		"body": "before(function () {\n\t${0}\n})"
 	},
-	"mocha beforeEach": {
-		"prefix": "bfe",
+	"beforeAll (jasmine)": {
+		"prefix": "fbfa",
+		"body": "beforeAll(function () {\n\t${0}\n})"
+	},
+	"beforeEach (mocha jasmine)": {
+		"prefix": "fbfe",
 		"body": "beforeEach(function () {\n\t${0}\n})"
 	},
-	"mocha after": {
-		"prefix": "aft",
+	"after (mocha)": {
+		"prefix": "faf",
 		"body": "after(function () {\n\t${0}\n})"
 	},
-	"mocha afterEach": {
-		"prefix": "afe",
+	"afterAll (jasmine)": {
+		"prefix": "fafa",
+		"body": "afterAll(function () {\n\t${0}\n})"
+	},
+	"afterEach (mocha jasmine)": {
+		"prefix": "fafe",
 		"body": "afterEach(function () {\n\t${0}\n})"
+	},
+	"suite (mocha)": {
+		"prefix": "fsuite",
+		"body": "suite('${1:suiteName}', function() {\n\tsetup(function() {\n\t\t${2}\n\t})\n\tteardown(function() {\n\t\t${3}\n\t})\n\t${0}\n})",
+		"description": "Mocha TDD suite with setup and teardown"
 	},
 
 	// timers

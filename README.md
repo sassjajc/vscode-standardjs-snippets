@@ -76,7 +76,7 @@ let ${1:name} = yield ${2:value}
 const ${1:name} = ${2:value}
 ```
 
-#### `cno⇥` const object
+#### `cnob⇥` const object
 ```js
 const ${1:name} = {
   ${0}
@@ -88,7 +88,7 @@ const ${1:name} = {
 const {${1:name}} = ${2:value}
 ```
 
-#### `cna⇥` const array
+#### `cnar⇥` const array
 ```js
 const ${1:name} = [
   ${0}

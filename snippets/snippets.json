@@ -16,7 +16,7 @@
 		"body": "const ${1:name} = ${2:value}"
 	},
 	"const object": {
-		"prefix": "cno",
+		"prefix": "cnob",
 		"body": "const ${1:name} = {\n\t${0}\n}"
 	},
 	"const object destructuring": {
@@ -24,7 +24,7 @@
 		"body": "const {${1:name}} = ${2:object}"
 	},
 	"const array": {
-		"prefix": "cna",
+		"prefix": "cnar",
 		"body": "const ${1:name} = [\n\t${0}\n]"
 	},
 	"const array destructuring": {

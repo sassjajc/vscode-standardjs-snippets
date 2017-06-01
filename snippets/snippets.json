@@ -1,17 +1,4 @@
 {
-	// declarations
-	// "var statement": {
-	// 	"prefix": "v",
-	// 	"body": "var ${1:name}"
-	// },
-	// "let statement": {
-	// 	"prefix": "l",
-	// 	"body": "let ${1:name}"
-	// },
-	// "const statement": {
-	// 	"prefix": "c",
-	// 	"body": "const ${1:name}"
-	// },
 	"var assignment": {
 		"prefix": "vas",
 		"body": "var ${1:name} = ${2:value}"
@@ -394,8 +381,8 @@
 		"body": "${1:source} instanceof ${2:Object}"
 	},
 	"expect": {
-		"prefix": "expect",
-		"body": "expect('${1:description}')${0}",
+		"prefix": "exxpect",
+		"body": "expect(${1})${0}",
 		"description": "(expect, jasmine, jest, ...)"
 	},
 	// jest

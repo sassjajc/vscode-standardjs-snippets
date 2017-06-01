@@ -56,21 +56,6 @@ Note that these links work only on github, not on VSCode marketplace:
 
 ### Declarations
 
-<!--#### `v⇥` var statement
-```js
-var ${1:name}
-```-->
-
-<!--#### `l⇥` let statement
-```js
-let ${1:name}
-```-->
-
-<!--#### `c⇥` const statement
-```js
-const ${1:name}
-```-->
-
 #### `vas⇥` var assignment
 ```js
 var ${1:name} = ${2:value}
@@ -98,7 +83,7 @@ const ${1:name} = {
 }
 ```
 
-#### `cad⇥` const object destructuring
+#### `cod⇥` const object destructuring
 ```js
 const {${1:name}} = ${2:value}
 ```
@@ -629,7 +614,7 @@ function (err, ${1:value}) {
 
 ### Testing
 
-#### `iarr⇥` isArray
+#### `iarr⇥` and `ia⇥` isArray
 ```js
 Array.isArray(${1:source})
 ```
@@ -644,9 +629,9 @@ typeof ${1:source} === '${2:undefined}'
 ${1:source} instanceof ${2:Object}
 ```
 
-#### `expect⇥` expect (multiple libraries)
+#### `exxpect⇥` expect (multiple libraries)
 ```js
-expect('${1:description}')${0}
+expect(${1})${0}
 ```
 
 ### Jest using anonymous arrow functions
@@ -674,28 +659,28 @@ it('${1:description}', () => {
 
 #### `abfa⇥` and `aba⇥` before all
 ```js
-before(function () {
+before(() => {
   ${0}
 })
 ```
 
 #### `abfe⇥` and `abe⇥` before each
 ```js
-beforeEach(function () {
+beforeEach(() => {
   ${0}
 })
 ```
 
 #### `aafa⇥` and `aaa⇥` after all
 ```js
-after(function () {
+after(() => {
   ${0}
 })
 ```
 
 #### `aafe⇥` and `aae⇥` after each
 ```js
-afterEach(function () {
+afterEach(() => {
   ${0}
 })
 ```

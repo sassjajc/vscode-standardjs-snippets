@@ -213,7 +213,7 @@ try {
 }
 ```
 
-#### `tn⇥` const yielded assignment
+#### `tn⇥` throw new
 ```js
 throw new ${0:error}
 ```
@@ -223,7 +223,7 @@ throw new ${0:error}
 
 #### `fn⇥` anonymous function
 ```js
-function (${1:arguments}) {${0}}
+function (${1}) {${0}}
 ```
 
 #### `fnn⇥` named function
@@ -235,12 +235,12 @@ function ${1:name}(${2:arguments}) {
 
 #### `af⇥` arrow function (ES6)
 ```js
-(${1:arguments}) => {${2:statement}}
+(${1}) => {${2}}${0}
 ```
 
-#### `afe⇥` arrow function empty / no braces (ES6)
+#### `afcb⇥` arrow function concise body (ES6)
 ```js
-(${1:arguments}) => ${2:statement}
+(${1:arguments}) => ${2:statement}${0}
 ```
 
 #### `gf⇥` generator function (ES6)
@@ -289,7 +289,7 @@ ${1:fn}.bind(${2:this}, ${3:arguments})
 
 ### Iterables
 
-#### `fel⇥` forEach loop
+#### `felp⇥` forEach loop
 ```js
 ${1:iterable}.forEach((${2:item}) => {
   ${0}
@@ -548,16 +548,16 @@ import '${1:module}'$0
 import * as ${2:alias} from '${1:module}'$0
 ```
 
-#### `emf⇥` export member function(s)
-```js
-export {${0}}
-```
-
 #### `edf⇥` export default function
 ```js
 export default (${1:params}) =>  {
   $0
 }
+```
+
+#### `emf⇥` export member function(s)
+```js
+export { ${0} }
 ```
 
 #### `enf⇥` export named function
@@ -687,84 +687,84 @@ afterEach(() => {
 
 ### Mocha, Jasmine, ... using anonymous functions
 
-#### `fdescribe⇥` and `fd⇥` describe
+#### `tdescribe⇥` and `fd⇥` describe
 ```js
 describe('${1:description}', function () {
   ${0}
 })
 ```
 
-#### `fcontext⇥` context (alias for describe)
+#### `tcontext⇥` context (alias for describe)
 ```js
 describe('${1:description}', function () {
   ${0}
 })
 ```
 
-#### `fsit⇥` and `fs⇥` synchronous "it"
+#### `tsit⇥` and `ts⇥` synchronous "it"
 ```js
 it('${1:description}', function () {
   ${0}
 })
 ```
 
-#### `fait⇥` asynchronous "it"
+#### `tait⇥` asynchronous "it"
 ```js
-it('${1:description}', function (done) {
+it('${1:description}', function (${2:done}) {
   ${0}
 })
 ```
 
-#### `ftest⇥` and `ft⇥` test (alias for it)
+#### `ttest⇥` and `tt⇥` test (alias for it)
 ```js
 test('${1:description}', function (${2:done}) {
   ${0}
 })
 ```
 
-#### `fbf⇥` before
+#### `tbf⇥` before
 ```js
 before(function () {
   ${0}
 })
 ```
 
-#### `fbfa⇥` and `fba⇥` before all (jasmine)
+#### `tbfa⇥` and `tba⇥` before all (jasmine)
 ```js
 beforeAll(function () {
   ${0}
 })
 ```
 
-#### `fbfe⇥` and `fbe⇥` before each
+#### `tbfe⇥` and `tbe⇥` before each
 ```js
 beforeEach(function () {
   ${0}
 })
 ```
 
-#### `faf⇥` after
+#### `taf⇥` after
 ```js
 after(function () {
   ${0}
 })
 ```
 
-#### `fafa⇥` and `faa⇥` after all (jasmine)
+#### `tafa⇥` and `taa⇥` after all (jasmine)
 ```js
 afterAll(function () {
   ${0}
 })
 ```
 
-#### `fafe⇥` and `fae⇥` after each
+#### `tafe⇥` and `tae⇥` after each
 ```js
 afterEach(function () {
   ${0}
 })
 ```
 
-#### `fsuite⇥` suite with setup and teardown
+#### `tsuite⇥` suite with setup and teardown
 ```js
 suite('${1:suiteName}', function() {
   setup(function() {

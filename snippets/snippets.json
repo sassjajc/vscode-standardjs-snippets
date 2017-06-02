@@ -97,7 +97,7 @@
 	// functions
 	"anonymous function": {
 		"prefix": "fn",
-		"body": "function (${1:arguments}) {${0}}"
+		"body": "function (${1}) {${0}}"
 	},
 	"named function": {
 		"prefix": "fnn",
@@ -105,17 +105,17 @@
 	},
 	"arrow function": {
 		"prefix": "af",
-		"body": "(${1}) => {${2:statement}}"
+		"body": "(${1}) => {${2}}${0}"
 	},
-	"arrow function empty": {
-		"prefix": "afe",
-		"body": "(${1}) => ${2:statement}"
+	"arrow function concise body": {
+		"prefix": "afcb",
+		"body": "(${1:arguments}) => ${2:statement}${0}"
 	},
 	"generator function": {
 		"prefix": "gf",
 		"body": "function* (${1:arguments}) {\n\t${0}\n}"
 	},
-	"named generator": {
+	"named generator function": {
 		"prefix": "gfn",
 		"body": "function* ${1:name}(${2:arguments}) {\n\t${0}\n}"
 	},
@@ -142,7 +142,7 @@
 
 	// iterables
 	"forEach loop": {
-		"prefix": "fel",
+		"prefix": "felp",
 		"body": "${1:iterable}.forEach((${2:item}) => {\n\t${0}\n})"
 	},
 	"map": {
@@ -252,10 +252,6 @@
 	},
 
 	// Promises
-	// "Promise": {
-	// 	"prefix": "ppro",
-	// 	"body": "Promise"
-	// },
 	"new Promise": {
 		"prefix": "pnew",
 		"body": "new Promise((resolve, reject) => {\n\t${0}\n})"
@@ -315,15 +311,15 @@
 		"body": "import * as ${2:alias} from '${1:module}'$0",
 		"description": "Import all exported bindings in a local alias"
 	},
-	"exportMemberFunction": {
-		"prefix": "emf",
-		"body": "export {${0}}",
-		"description": "Export member function(s)"
-	},
 	"exportDefaultFunction": {
 		"prefix": "edf",
 		"body": "export default (${1:params}) =>  {\n\t$0\n}\n",
 		"description": "Export default function"
+	},
+	"exportMemberFunction": {
+		"prefix": "emf",
+		"body": "export { ${0} }",
+		"description": "Export member function(s)"
 	},
 	"exportNamedFunction": {
 		"prefix": "enf",
@@ -381,7 +377,7 @@
 		"body": "${1:source} instanceof ${2:Object}"
 	},
 	"expect": {
-		"prefix": "exxpect",
+		"prefix": "texpect",
 		"body": "expect(${1})${0}",
 		"description": "(expect, jasmine, jest, ...)"
 	},
@@ -422,53 +418,53 @@
 	},
 	// mocha jasmine
 	"describe (mocha jasmine)": {
-		"prefix": "fdescribe",
+		"prefix": "tdescribe",
 		"body": "describe('${1:description}', function () {\n\t${0}\n})"
 	},
 	"context (mocha)": {
-		"prefix": "fcontext",
+		"prefix": "tcontext",
 		"body": "describe('${1:description}', function () {\n\t${0}\n})",
 		"description": "alias for describe (mocha)"
 	},
 	"synchronous it (mocha jasmine)": {
-		"prefix": "fsit",
+		"prefix": "tsit",
 		"body": "it('${1:description}', function () {\n\t${0}\n})"
 	},
 	"asynchronous it (mocha jasmine)": {
-		"prefix": "fait",
-		"body": "it('${1:description}', function (done) {\n\t${0}\n})"
+		"prefix": "tait",
+		"body": "it('${1:description}', function (${2:done}) {\n\t${0}\n})"
 	},
 	"test (mocha)": {
-		"prefix": "ftest",
+		"prefix": "ttest",
 		"body": "test('${1:description}', function (${2:done}) {\n\t${0}\n})",
 		"description": "alias for it (mocha)"
 	},
 	"before (mocha)": {
-		"prefix": "fbf",
+		"prefix": "tbf",
 		"body": "before(function () {\n\t${0}\n})"
 	},
 	"beforeAll (jasmine)": {
-		"prefix": "fbfa",
+		"prefix": "tbfa",
 		"body": "beforeAll(function () {\n\t${0}\n})"
 	},
 	"beforeEach (mocha jasmine)": {
-		"prefix": "fbfe",
+		"prefix": "tbfe",
 		"body": "beforeEach(function () {\n\t${0}\n})"
 	},
 	"after (mocha)": {
-		"prefix": "faf",
+		"prefix": "taf",
 		"body": "after(function () {\n\t${0}\n})"
 	},
 	"afterAll (jasmine)": {
-		"prefix": "fafa",
+		"prefix": "tafa",
 		"body": "afterAll(function () {\n\t${0}\n})"
 	},
 	"afterEach (mocha jasmine)": {
-		"prefix": "fafe",
+		"prefix": "tafe",
 		"body": "afterEach(function () {\n\t${0}\n})"
 	},
 	"suite (mocha)": {
-		"prefix": "fsuite",
+		"prefix": "tsuite",
 		"body": "suite('${1:suiteName}', function() {\n\tsetup(function() {\n\t\t${2}\n\t})\n\tteardown(function() {\n\t\t${3}\n\t})\n\t${0}\n})",
 		"description": "Mocha TDD suite with setup and teardown"
 	},

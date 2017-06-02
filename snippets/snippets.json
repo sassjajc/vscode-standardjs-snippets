@@ -99,17 +99,25 @@
 		"prefix": "fn",
 		"body": "function (${1}) {${0}}"
 	},
+	"anonymous empty function": {
+		"prefix": "fne",
+		"body": "function () {${0}}"
+	},
 	"named function": {
 		"prefix": "fnn",
 		"body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}"
 	},
 	"arrow function": {
 		"prefix": "af",
-		"body": "(${1}) => {${2}}${0}"
+		"body": "(${1}) => {${0}}"
+	},
+	"arrow empty function": {
+		"prefix": "afe",
+		"body": "() => {${0}}"
 	},
 	"arrow function concise body": {
 		"prefix": "afcb",
-		"body": "(${1:arguments}) => ${2:statement}${0}"
+		"body": "(${1:arguments}) => ${2:statement}"
 	},
 	"generator function": {
 		"prefix": "gf",

@@ -226,6 +226,11 @@ throw new ${0:error}
 function (${1}) {${0}}
 ```
 
+#### `fne⇥` anonymous empty function
+```js
+function () {${0}}
+```
+
 #### `fnn⇥` named function
 ```js
 function ${1:name}(${2:arguments}) {
@@ -235,12 +240,17 @@ function ${1:name}(${2:arguments}) {
 
 #### `af⇥` arrow function (ES6)
 ```js
-(${1}) => {${2}}${0}
+(${1}) => {${0}}
+```
+
+#### `afe⇥` arrow empty function (ES6)
+```js
+() => {${0}}
 ```
 
 #### `afcb⇥` arrow function concise body (ES6)
 ```js
-(${1:arguments}) => ${2:statement}${0}
+(${1:arguments}) => ${2:statement}
 ```
 
 #### `gf⇥` generator function (ES6)

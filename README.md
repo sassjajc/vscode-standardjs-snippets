@@ -56,51 +56,51 @@ Note that these links work only on github, not on VSCode marketplace:
 
 ### Declarations
 
-#### `vas⇥` var assignment
+#### `vass⇥` var assignment
 ```js
 var ${1:name} = ${2:value}
 ```
 
-#### `las⇥` let assignment
+#### `lass⇥` let assignment
 ```js
 let ${1:name} = ${2:value}
 ```
 
-#### `ly⇥` let yielded assignment
+#### `lyass⇥` let yielded assignment
 ```js
 let ${1:name} = yield ${2:value}
 ```
 
-#### `cna⇥` const assignment
+#### `cass⇥` const assignment
 ```js
 const ${1:name} = ${2:value}
 ```
 
-#### `cnob⇥` const object
+#### `coass⇥` const object assignment
 ```js
 const ${1:name} = {
   ${0}
 }
 ```
 
-#### `cod⇥` const object destructuring
+#### `codass⇥` const object destructuring assignment
 ```js
 const {${1:name}} = ${2:value}
 ```
 
-#### `cnar⇥` const array
+#### `caass⇥` const array assignment
 ```js
 const ${1:name} = [
   ${0}
 ]
 ```
 
-#### `cad⇥` const array destructuring
+#### `cadass⇥` const array destructuring assignment
 ```js
 const [{${1:name}}] = ${2:value}
 ```
 
-#### `cy⇥` const yielded assignment
+#### `cyass⇥` const yielded assignment
 ```js
 const ${1:name} = yield ${2:value}
 ```
@@ -213,9 +213,9 @@ try {
 }
 ```
 
-#### `tn⇥` throw new
+#### `tne⇥` throw new Error
 ```js
-throw new ${0:error}
+throw new Error(${0:error})
 ```
 
 
@@ -233,48 +233,48 @@ function () {${0}}
 
 #### `fnn⇥` named function
 ```js
-function ${1:name}(${2:arguments}) {
+function ${1:name} (${2:arguments}) {
   ${0}
 }
 ```
 
-#### `af⇥` arrow function (ES6)
+#### `afn⇥` arrow function (ES6)
 ```js
 (${1}) => {${0}}
 ```
 
-#### `afe⇥` arrow empty function (ES6)
+#### `afne⇥` arrow empty function (ES6)
 ```js
 () => {${0}}
 ```
 
-#### `afcb⇥` arrow function concise body (ES6)
+#### `afnc⇥` arrow function concise body (ES6)
 ```js
 (${1:arguments}) => ${2:statement}
 ```
 
-#### `gf⇥` generator function (ES6)
+#### `gfn⇥` generator function (ES6)
 ```js
 function* (${1:arguments}) {
   ${0}
 }
 ```
 
-#### `gfn⇥` named generator function (ES6)
+#### `gfnn⇥` named generator function (ES6)
 ```js
-function* ${1:name}(${1:arguments}) {
+function* ${1:name} (${1:arguments}) {
   ${0}
 }
 ```
 
-#### `asf⇥` async function
+#### `asfn⇥` async function
 ```js
 async function (${1:arguments}) {
   ${0}
 }
 ```
 
-#### `asa⇥` async arrow function
+#### `asafn⇥` async arrow function
 ```js
 async (${1:arguments}) => {
   ${0}
@@ -288,17 +288,17 @@ async (${1:arguments}) => {
 })(${2})
 ```
 
-#### `fap⇥` function apply
+#### `fapply⇥` function apply
 ```js
 ${1:fn}.apply(${2:this}, ${3:arguments})
 ```
 
-#### `fc⇥` function call
+#### `fcall⇥` function call
 ```js
 ${1:fn}.call(${2:this}, ${3:arguments})
 ```
 
-#### `fb⇥` function bind
+#### `fbind⇥` function bind
 ```js
 ${1:fn}.bind(${2:this}, ${3:arguments})
 ```
@@ -306,7 +306,7 @@ ${1:fn}.bind(${2:this}, ${3:arguments})
 
 ### Iterables
 
-#### `felp⇥` forEach loop
+#### `fleach⇥` forEach loop
 ```js
 ${1:iterable}.forEach((${2:item}) => {
   ${0}
@@ -358,41 +358,41 @@ ${1:iterable}.some((${2:item}) => {
 
 ### Objects and classes
 
-#### `ok` Object.keys
-```js
-Object.keys(${1:obj})
-```
-
-#### `oc` Object.create
+#### `ocreate` Object.create
 ```js
 Object.create(${1:obj})
 ```
 
-#### `oa` Object.assign
+#### `oassign` Object.assign
 ```js
 Object.assign(${1:dest}, ${2:source})
 ```
 
-#### `og` Object.getOwnPropertyDescriptor
+#### `ogetprop` Object.getOwnPropertyDescriptor
 ```js
 Object.getOwnPropertyDescriptor(${1:dest}, '${2:prop}')
 ```
 
-#### `od` Object.defineProperty
+#### `odefprop` Object.defineProperty
 ```js
 Object.defineProperty(${1:dest}, '${2:prop}', {
   ${0}
 })
 ```
 
+#### `okeys` Object.keys
+```js
+Object.keys(${1:obj})
+```
+
 #### `proto⇥` prototype method
 ```js
-${1:Class}.prototype.${2:methodName} = function (${3:arguments}) {
+${1:Object}.prototype.${2:methodName} = function (${3:arguments}) {
   ${0}
 }
 ```
 
-#### `cs⇥` class (ES6)
+#### `cls⇥` class (ES6)
 ```js
 class ${1:name} {
   constructor(${2:arguments}) {
@@ -401,7 +401,7 @@ class ${1:name} {
 }
 ```
 
-#### `csx⇥` extend a class (ES6)
+#### `clsext⇥` extend a class (ES6)
 ```js
 class ${1:name} extends ${2:base} {
   constructor(${2:arguments}) {
@@ -411,35 +411,35 @@ class ${1:name} extends ${2:base} {
 }
 ```
 
-#### `cc⇥` constructor (ES6 syntax)
+#### `clscon⇥` constructor (ES6 syntax)
 ```js
 constructor () {
   ${0}
 }
 ```
 
-#### `cm⇥` method (ES6 syntax)
+#### `clsmeth⇥` method (ES6 syntax)
 ```js
 ${1:method} (${2:arguments}) {
   ${0}
 }
 ```
 
-#### `cget⇥` getter (ES6 syntax)
+#### `clsget⇥` getter (ES6 syntax)
 ```js
 get ${1:property} () {
   ${0}
 }
 ```
 
-#### `cset⇥` setter (ES6 syntax)
+#### `clsset⇥` setter (ES6 syntax)
 ```js
 set ${1:property} (${2:value}) {
   ${0}
 }
 ```
 
-#### `cgs⇥` getter and setter (ES6 syntax)
+#### `clsgs⇥` getter and setter (ES6 syntax)
 ```js
 get ${1:property} () {
   ${0}
@@ -540,7 +540,7 @@ yield ${0}
 
 ### ES6 modules
 
-#### `imd⇥` import module default export
+#### `imdef⇥` import module default export
 ```js
 import ${2:moduleName} from '${1:module}'$0
 ```
@@ -550,48 +550,48 @@ import ${2:moduleName} from '${1:module}'$0
 import { $2 } from '${1:module}'$0
 ```
 
-#### `imma⇥` import member(s) of module in a local alias with destructuring
+#### `immas⇥` import member(s) of module in a local alias with destructuring
 ```js
 import { ${2:originalName} as ${3:alias} } from '${1:module}'$0
 ```
 
-#### `imwb⇥` import entire module without bindings
+#### `imwob⇥` import entire module without bindings
 ```js
 import '${1:module}'$0
 ```
 
-#### `ima⇥` import all exported bindings in a local alias
+#### `imas⇥` import all exported bindings in a local alias
 ```js
 import * as ${2:alias} from '${1:module}'$0
 ```
 
-#### `edf⇥` export default function
+#### `exdf⇥` export default function
 ```js
 export default (${1:params}) =>  {
   $0
 }
 ```
 
-#### `emf⇥` export member function(s)
+#### `exmf⇥` export member function(s)
 ```js
 export { ${0} }
 ```
 
-#### `enf⇥` export named function
+#### `exnf⇥` export named function
 ```js
 export const ${1:functionName} = (${2:params}) =>  {
   $0
 }
 ```
 
-#### `edc⇥` export default class
+#### `exdc⇥` export default class
 ```js
 export default class ${1:className} {
   $0
 }
 ```
 
-#### `edce⇥` export default class that extends a base class
+#### `exdce⇥` export default class that extends a base class
 ```js
 export default class ${1:className} extends ${2:baseclassName} {
   $0
@@ -605,26 +605,34 @@ export default class ${1:className} extends ${2:baseclassName} {
 ```js
 require('${1:module}')
 ```
-#### `crq⇥` require and assign a module
+#### `rqc⇥` require and assign a module
 ```js
-const ${1:module} = require('${1:module}')
+const ${2:name} = require('${1:module}')${0}
 ```
 
-#### `eme⇥` export member
+#### `mexpm⇥` export member
 ```js
 exports.${1:name} = ${2:value}
 ```
 
-#### `moe⇥` module.exports
+#### `mexpcls⇥` module.exports
 ```js
 module.exports = ${1:name}
 ```
 
-#### `cb⇥` Node.js style callback
+#### `fncb⇥` Node.js style callback
 ```js
 function (err, ${1:value}) {
   if (err) throw err
-  t${0}
+    ${0}
+}
+```
+
+#### `afncb⇥` Node.js style arrow function callback
+```js
+(err, ${1:value}) => {
+  if (err) throw err
+    ${0}
 }
 ```
 
@@ -636,17 +644,17 @@ function (err, ${1:value}) {
 Array.isArray(${1:source})
 ```
 
-#### `tyo⇥` typeof comparison
+#### `tyof⇥` typeof comparison
 ```js
 typeof ${1:source} === '${2:undefined}'
 ```
 
-#### `ino⇥` instanceof comparison
+#### `inof⇥` instanceof comparison
 ```js
 ${1:source} instanceof ${2:Object}
 ```
 
-#### `exxpect⇥` expect (multiple libraries)
+#### `exx⇥` expect (multiple libraries)
 ```js
 expect(${1})${0}
 ```
@@ -797,21 +805,21 @@ suite('${1:suiteName}', function() {
 
 ### Timers
 
-#### `sti⇥` setTimeout
+#### `stim⇥` setTimeout
 ```js
 setTimeout(() => {
   ${0}
 }, ${1:delay})
 ```
 
-#### `sin⇥` setInterval
+#### `sint⇥` setInterval
 ```js
 setTimeout(() => {
   ${0}
 }, ${1:delay})
 ```
 
-#### `sim⇥` setImmediate
+#### `simm⇥` setImmediate
 ```js
 setImmediate(() => {
   ${0}
@@ -839,57 +847,57 @@ JSON.parse($0)
 
 ### Console
 
-#### `coa⇥` console.assert
+#### `coassert⇥` console.assert
 ```js
 console.assert(${1:expression}, ${2:object})
 ```
 
-#### `coc⇥` console.clear
+#### `coclear⇥` console.clear
 ```js
 console.clear()
 ```
 
-#### `coct⇥` console.count
+#### `cocount⇥` console.count
 ```js
 console.count(${1:label})
 ```
 
-#### `cod⇥` console.dir
+#### `codir⇥` console.dir
 ```js
 console.dir(${1:object})
 ```
 
-#### `coe⇥` console.error
+#### `coerror⇥` console.error
 ```js
 console.error(${1:object})
 ```
 
-#### `cog⇥` console.group
+#### `cogroup⇥` console.group
 ```js
 console.group(\"${1:label}\")
 ```
 
-#### `coge⇥` console.groupEnd
+#### `cogroupend⇥` console.groupEnd
 ```js
 console.groupEnd()
 ```
 
-#### `coi⇥` console.info
+#### `coinfo⇥` console.info
 ```js
 console.info(${1:object})
 ```
 
-#### `col⇥` console.log
+#### `colog⇥` console.log
 ```js
 console.log(${1:object})
 ```
 
-#### `cot⇥` console.trace
+#### `cotrace⇥` console.trace
 ```js
 console.trace(${1:object})
 ```
 
-#### `cow⇥` console.warn
+#### `cowarn⇥` console.warn
 ```js
 console.warn(${1:object})
 ```
@@ -897,14 +905,14 @@ console.warn(${1:object})
 
 ### DOM
 
-#### `aev⇥` addEventListener
+#### `aevli⇥` addEventListener
 ```js
 ${1:document}.addEventListener('${2:event}', ${3:ev} => {
   ${0}
 })
 ```
 
-#### `rev⇥` removeEventListener
+#### `revli⇥` removeEventListener
 ```js
 ${1:document}.removeEventListener('${2:event}', ${3:listener})
 ```
@@ -916,34 +924,34 @@ ${1:emitter}.on('${2:event}', (${3:arguments}) => {
 })
 ```
 
-#### `evc` dom event cancel default and propagation
+#### `evcdp` dom event cancel default and propagation
 ```js
 ev.preventDefault()
 ev.stopPropagation()
 return false
 ```
 
-#### `gi⇥` getElementById
+#### `gid⇥` getElementById
 ```js
 ${1:document}.getElementById('${2:id}')
 ```
 
-#### `gc⇥` getElementsByClassName
+#### `gcla⇥` getElementsByClassName
 ```js
 Array.from(${1:document}.getElementsByClassName('${2:class}'))
 ```
 
-#### `gt⇥` getElementsByTagName
+#### `gtag⇥` getElementsByTagName
 ```js
 Array.from(${1:document}.getElementsByTagName('${2:tag}'))
 ```
 
-#### `qs⇥` querySelector
+#### `qsel⇥` querySelector
 ```js
 ${1:document}.querySelector('${2:selector}')
 ```
 
-#### `qsa⇥` querySelectorAll
+#### `qsela⇥` querySelectorAll
 ```js
 Array.from(${1:document}.querySelectorAll('${2:selector}'))
 ```
@@ -972,37 +980,37 @@ ${1:document}.appendChild(${2:elem});
 ${1:document}.removeChild(${2:elem});
 ```
 
-#### `clad⇥` classList.add
+#### `clladd⇥` classList.add
 
 ```js
 ${1:document}.classList.add('${2:class}');
 ```
 
-#### `clr⇥` classList.remove
+#### `cllrem⇥` classList.remove
 
 ```js
 ${1:document}.classList.remove('${2:class}');
 ```
 
-#### `clt⇥` classList.toggle
+#### `clltog⇥` classList.toggle
 
 ```js
 ${1:document}.classList.toggle('${2:class}');
 ```
 
-#### `ga⇥` getAttribute
+#### `gatt⇥` getAttribute
 
 ```js
 ${1:document}.getAttribute('${2:attr}');
 ```
 
-#### `sa⇥` setAttribute
+#### `satt⇥` setAttribute
 
 ```js
 ${1:document}.setAttribute('${2:attr}', ${3:value});
 ```
 
-#### `ra⇥` removeAttribute
+#### `ratt⇥` removeAttribute
 
 ```js
 ${1:document}.removeAttribute('${2:attr}');

@@ -7,32 +7,40 @@
 		"prefix": "lass",
 		"body": "let ${1:name} = ${2:value}"
 	},
-	"let yielded assignment": {
-		"prefix": "lyass",
+	"let assignment await": {
+		"prefix": "lassaw",
+		"body": "let ${1:name} = await ${2:value}"
+	},
+	"let assignment yield": {
+		"prefix": "lassy",
 		"body": "let ${1:name} = yield ${2:value}"
 	},
 	"const assignment": {
 		"prefix": "cass",
 		"body": "const ${1:name} = ${2:value}"
 	},
-	"const object assignment": {
-		"prefix": "coass",
+	"const assignment await": {
+		"prefix": "cassaw",
+		"body": "const ${1:name} = await ${2:value}"
+	},
+	"const assignment object": {
+		"prefix": "cassob",
 		"body": "const ${1:name} = {\n\t${0}\n}"
 	},
-	"const object destructuring assignment": {
-		"prefix": "codass",
+	"const assignment object destructuring": {
+		"prefix": "cassod",
 		"body": "const {${1:name}} = ${2:object}"
 	},
-	"const array assignment": {
-		"prefix": "caass",
+	"const assignment array": {
+		"prefix": "cassar",
 		"body": "const ${1:name} = [\n\t${0}\n]"
 	},
-	"const array destructuring assignment": {
-		"prefix": "cadass",
+	"const assignment array destructuring": {
+		"prefix": "cassad",
 		"body": "const [{${1:name}}] = ${2:array}"
 	},
-	"const yielded assignment": {
-		"prefix": "cyass",
+	"const assignment yield": {
+		"prefix": "cassy",
 		"body": "const ${1:name} = yield ${2:value}"
 	},
 

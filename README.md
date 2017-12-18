@@ -66,7 +66,12 @@ var ${1:name} = ${2:value}
 let ${1:name} = ${2:value}
 ```
 
-#### `lyass⇥` let yielded assignment
+#### `lassaw⇥` let assignment await
+```js
+let ${1:name} = await ${2:value}
+```
+
+#### `lassy⇥` let assignment yield
 ```js
 let ${1:name} = yield ${2:value}
 ```
@@ -76,31 +81,36 @@ let ${1:name} = yield ${2:value}
 const ${1:name} = ${2:value}
 ```
 
-#### `coass⇥` const object assignment
+#### `cassaw⇥` const assignment await
+```js
+const ${1:name} = await ${2:value}
+```
+
+#### `cassob⇥` const assignment object
 ```js
 const ${1:name} = {
   ${0}
 }
 ```
 
-#### `codass⇥` const object destructuring assignment
+#### `cassod⇥` const assignment object destructuring
 ```js
 const {${1:name}} = ${2:value}
 ```
 
-#### `caass⇥` const array assignment
+#### `cassar⇥` const assignment array
 ```js
 const ${1:name} = [
   ${0}
 ]
 ```
 
-#### `cadass⇥` const array destructuring assignment
+#### `cassad⇥` const assignment array destructuring
 ```js
 const [{${1:name}}] = ${2:value}
 ```
 
-#### `cyass⇥` const yielded assignment
+#### `cassy⇥` const assignment yield
 ```js
 const ${1:name} = yield ${2:value}
 ```
@@ -1015,6 +1025,84 @@ ${1:document}.setAttribute('${2:attr}', ${3:value});
 ```js
 ${1:document}.removeAttribute('${2:attr}');
 ```
+
+## VS Code Reactjs snippets
+
+Converted to Standard JS from the original v1.7.0 at https://github.com/xabikos/vscode-react
+
+Below is a list of all available snippets and the triggers of each one. The **⇥** means the `TAB` key.
+
+| Trigger  | Content |
+| -------: | ------- |
+| `rcc→`   | class component skeleton |
+| `rrc→`   | class component skeleton with react-redux connect |
+| `rccp→`  | class component skeleton with prop types after the class |
+| `rcjc→`  | class component skeleton without import and default export lines |
+| `rcfc→`  | class component skeleton that contains all the lifecycle methods |
+| `rwwd→`  | class component without import statements |
+| `rpc→`   | class pure component skeleton with prop types after the class |
+| `rsc→`   | stateless component skeleton |
+| `rscp→`  | stateless component with prop types skeleton |
+| `rpt→`   | empty propTypes declaration |
+| `rdp→`   | empty defaultProps declaration |
+| `con→`   | class default constructor with props|
+| `conc→`  | class default constructor with props and context |
+| `est→`   | empty state object |
+| `cwm→`   | `componentWillMount method` |
+| `cdm→`   | `componentDidMount method` |
+| `cwr→`   | `componentWillReceiveProps method` |
+| `scu→`   | `shouldComponentUpdate method` |
+| `cwup→`  | `componentWillUpdate method` |
+| `cdup→`  | `componentDidUpdate method` |
+| `cwun→`  | `componentWillUnmount method` |
+| `ren→`   | `render method` |
+| `sst→`   | `this.setState with object as parameter` |
+| `ssf→`   | `this.setState with function as parameter` |
+| `props→` | `this.props` |
+| `state→` | `this.state` |
+| `bnd→`   | `binds the this of method inside the constructor` |
+
+The following table lists all the snippets that can be used for prop types.
+Every snippet regarding prop types begins with ```pt``` so it's easy to group it all together and explore all the available options.
+On top of that each prop type snippets has one equivalent when we need to declare that this property is also required.
+For example ```pta``` creates the ```PropTypes.array``` and ```ptar``` creates the ```PropTypes.array.isRequired```
+
+| Trigger  | Content |
+| -------: | ------- |
+| `pta→`   | `PropTypes.array,` |
+| `ptar→`  | `PropTypes.array.isRequired,` |
+| `ptb→`   | `PropTypes.bool,` |
+| `ptbr→`  | `PropTypes.bool.isRequired,` |
+| `ptf→`   | `PropTypes.func,` |
+| `ptfr→`  | `PropTypes.func.isRequired,` |
+| `ptn→`   | `PropTypes.number,` |
+| `ptnr→`  | `PropTypes.number.isRequired,` |
+| `pto→`   | `PropTypes.object.,` |
+| `ptor→`  | `PropTypes.object.isRequired,` |
+| `pts→`   | `PropTypes.string,` |
+| `ptsr→`  | `PropTypes.string.isRequired,` |
+| `ptnd→`  | `PropTypes.node,` |
+| `ptndr→` | `PropTypes.node.isRequired,` |
+| `ptel→`  | `PropTypes.element,` |
+| `ptelr→` | `PropTypes.element.isRequired,` |
+| `pti→`   | `PropTypes.instanceOf(ClassName),` |
+| `ptir→`  | `PropTypes.instanceOf(ClassName).isRequired,` |
+| `pte→`   | `PropTypes.oneOf(['News', 'Photos']),` |
+| `pter→`  | `PropTypes.oneOf(['News', 'Photos']).isRequired,` |
+| `ptet→`  | `PropTypes.oneOfType([PropTypes.string, PropTypes.number]),` |
+| `ptetr→` | `PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,` |
+| `ptao→`  | `PropTypes.arrayOf(PropTypes.number),` |
+| `ptaor→` | `PropTypes.arrayOf(PropTypes.number).isRequired,` |
+| `ptoo→`  | `PropTypes.objectOf(PropTypes.number),` |
+| `ptoor→` | `PropTypes.objectOf(PropTypes.number).isRequired,` |
+| `ptsh→`  | `PropTypes.shape({color: PropTypes.string, fontSize: PropTypes.number}),` |
+| `ptshr→` | `PropTypes.shape({color: PropTypes.string, fontSize: PropTypes.number}).isRequired,` |
+
+
+[react]: https://facebook.github.io/react/
+[babelsublime]: https://github.com/babel/babel-sublime-snippets
+[javacript]: https://github.com/xabikos/vscode-javascript
+
 
 # License
 

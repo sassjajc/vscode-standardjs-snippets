@@ -298,5 +298,15 @@
     "prefix": "ptshr",
     "body": "PropTypes.shape({\n\t$0\n}).isRequired,",
     "description": "An object taking on a particular shape required"
+  },
+  "jsx element": {
+    "prefix": "jel",
+    "body": "<${1:elementName}>\n\t$0\n</${1:elementName}>",
+    "description": "an element"
+  },
+  "jsx element self closed": {
+    "prefix": "jelc",
+    "body": "<${1:elementName} />",
+    "description": "an element self closed"
   }
 }

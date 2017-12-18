@@ -295,6 +295,14 @@
 	"Promise.catch": {
 		"prefix": "pcatch",
 		"body": "${1:promise}.catch(${2:err} => {\n\t${0}\n})"
+  },
+  "await Promise.all": {
+		"prefix": "paaw",
+		"body": "await Promise.all(${1:value})"
+	},
+	"await Promise.all map": {
+		"prefix": "paawm",
+		"body": "await Promise.all(${1:array}.map((${2:value}) => {\n\t${0}\n}))"
 	},
 	"await": {
 		"prefix": "awt",

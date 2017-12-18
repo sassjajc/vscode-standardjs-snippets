@@ -12,7 +12,7 @@ A collection of ES6 snippets for faster JavaScript development in [Atom Editor](
 
 This collection is complementary to [atom/language-javascript](https://github.com/atom/language-javascript). It's based on [extrabacon/atom-turbo-javascript](https://github.com/extrabacon/atom-turbo-javascript) and it enforces [standardjs code style](http://standardjs.com/).
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.png)](https://github.com/feross/standard)
 
 __Yes!, no semicolons:__
 - [Are Semicolons Necessary in JavaScript?](https://www.youtube.com/watch?v=gsfbh17Ax9I)
@@ -53,6 +53,7 @@ Note that these links work only on github, not on VSCode marketplace:
 - [miscellaneous js](#miscellaneous-js)
 - [console](#console)
 - [DOM](#dom)
+- [VS Code Reactjs snippets](#vs-code-reactjs-snippets)
 
 ### Declarations
 
@@ -535,6 +536,16 @@ ${1:promise}.then((${2:value}) => {
 ${1:promise}.catch((${2:err}) => {
   ${0}
 })
+```
+
+#### `paaw⇥` Promise.all await
+```js
+await Promise.all(${1:value})
+```
+
+#### `paawm⇥` Promise.all await map
+```js
+await Promise.all(${1:array}.map((${2:value}) => {\n\t${0}\n}))
 ```
 
 #### `awt⇥` await
@@ -1061,6 +1072,8 @@ Below is a list of all available snippets and the triggers of each one. The **�
 | `props→` | `this.props` |
 | `state→` | `this.state` |
 | `bnd→`   | `binds the this of method inside the constructor` |
+| `jel→`   | `jsx element` |
+| `jelc→`  | `jsx element, self closed` |
 
 The following table lists all the snippets that can be used for prop types.
 Every snippet regarding prop types begins with ```pt``` so it's easy to group it all together and explore all the available options.

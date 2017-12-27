@@ -1045,20 +1045,19 @@ Below is a list of all available snippets and the triggers of each one. The **�
 
 | Trigger  | Content |
 | -------: | ------- |
-| `rcc→`   | class component skeleton |
-| `rrc→`   | class component skeleton with react-redux connect |
-| `rccp→`  | class component skeleton with prop types after the class |
-| `rcjc→`  | class component skeleton without import and default export lines |
-| `rcfc→`  | class component skeleton that contains all the lifecycle methods |
-| `rwwd→`  | class component without import statements |
-| `rpc→`   | class pure component skeleton with prop types after the class |
-| `rsc→`   | stateless component skeleton |
-| `rscp→`  | stateless component with prop types skeleton |
-| `rpt→`   | empty propTypes declaration |
-| `rdp→`   | empty defaultProps declaration |
-| `con→`   | class default constructor with props|
-| `conc→`  | class default constructor with props and context |
-| `est→`   | empty state object |
+| `rcc→`   | `class component skeleton` |
+| `rrc→`   | `class component skeleton with react-redux connect` |
+| `rccp→`  | `class component skeleton with prop types after the class` |
+| `rcjc→`  | `class component skeleton without import and default export lines` |
+| `rcfc→`  | `class component skeleton that contains all the lifecycle methods` |
+| `rwwd→`  | `class component without import statements` |
+| `rpc→`   | `class pure component skeleton with prop types after the class` |
+| `rsc→`   | `stateless component skeleton` |
+| `rscp→`  | `stateless component with prop types skeleton` |
+| `con→`   | `class default constructor with props` |
+| `conc→`  | `class default constructor with props and context` |
+| `est→`   | `empty state object` |
+| `bnd→`   | `binds the this of method inside the constructor` |
 | `cwm→`   | `componentWillMount method` |
 | `cdm→`   | `componentDidMount method` |
 | `cwr→`   | `componentWillReceiveProps method` |
@@ -1071,9 +1070,10 @@ Below is a list of all available snippets and the triggers of each one. The **�
 | `ssf→`   | `this.setState with function as parameter` |
 | `props→` | `this.props` |
 | `state→` | `this.state` |
-| `bnd→`   | `binds the this of method inside the constructor` |
 | `jel→`   | `jsx element` |
-| `jelc→`  | `jsx element, self closed` |
+| `jsc→`   | `self closed jsx element` |
+| `rpt→`   | `empty propTypes declaration` |
+| `rdp→`   | `empty defaultProps declaration` |
 
 The following table lists all the snippets that can be used for prop types.
 Every snippet regarding prop types begins with ```pt``` so it's easy to group it all together and explore all the available options.

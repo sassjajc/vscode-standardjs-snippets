@@ -53,18 +53,18 @@
   },
 
   "classConstructor": {
-    "prefix": "con",
+    "prefix": "rcon",
     "body": "constructor (props) {\n\tsuper(props)\n\t$0\n}\n",
     "description": "Adds a default constructor for the class that contains props as arguments"
   },
   "classConstructorContext": {
-    "prefix": "conc",
+    "prefix": "rconc",
     "body": "constructor (props, context) {\n\tsuper(props, context)\n\t$0\n}\n",
     "description": "Adds a default constructor for the class that contains props and context as arguments"
   },
 
   "emptyState": {
-    "prefix": "est",
+    "prefix": "estat",
     "body": "this.state = {\n\t$1\n}",
     "description": "Creates empty state object. To be used in a constructor."
   },

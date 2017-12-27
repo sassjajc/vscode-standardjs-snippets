@@ -45,20 +45,12 @@
 	},
 
 	//flow control
-	"if statement": {
-		"prefix": "ifs",
-		"body": "if (${1:condition}) {\n\t${0}\n}"
-	},
 	"else statement": {
-		"prefix": "ees",
+		"prefix": "else",
 		"body": "else {\n\t${0}\n}"
 	},
-	"if/else statement": {
-		"prefix": "ies",
-		"body": "if (${1:condition}) {\n\t${0}\n} else {\n\t\n}"
-	},
 	"else if statement": {
-		"prefix": "eis",
+		"prefix": "elif",
 		"body": "else if (${1:condition}) {\n\t${0}\n}"
 	},
 	"let - if statement": {
@@ -103,37 +95,37 @@
 	},
 
 	// functions
-	"anonymous function": {
+	"named function": {
 		"prefix": "fn",
+		"body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+	},
+	"anonymous function": {
+		"prefix": "fna",
 		"body": "function (${1}) {${0}}"
 	},
 	"anonymous empty function": {
 		"prefix": "fne",
 		"body": "function () {${0}}"
 	},
-	"named function": {
-		"prefix": "fnn",
-		"body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}"
-	},
 	"arrow function": {
 		"prefix": "afn",
 		"body": "(${1}) => {${0}}"
 	},
-	"arrow empty function": {
-		"prefix": "afne",
-		"body": "() => {${0}}"
-	},
 	"arrow function concise body": {
 		"prefix": "afnc",
-		"body": "(${1:arguments}) => ${2:statement}"
+		"body": "(${1}) => ${2:statement}"
 	},
-	"generator function": {
-		"prefix": "gfn",
-		"body": "function* (${1:arguments}) {\n\t${0}\n}"
+	"arrow function empty arguments": {
+		"prefix": "afne",
+		"body": "() => ${0}"
 	},
 	"named generator function": {
-		"prefix": "gfnn",
+		"prefix": "gfn",
 		"body": "function* ${1:name} (${2:arguments}) {\n\t${0}\n}"
+	},
+	"generator function": {
+		"prefix": "gfna",
+		"body": "function* (${1:arguments}) {\n\t${0}\n}"
 	},
 	"async function": {
 		"prefix": "asfn",
@@ -162,7 +154,7 @@
 
 	// iterables
 	"forEach loop": {
-		"prefix": "fleach",
+		"prefix": "each",
 		"body": "${1:iterable}.forEach((${2:item}) => {\n\t${0}\n})"
 	},
 	"map": {
@@ -521,11 +513,11 @@
 		"body": "'use strict'"
 	},
 	"JSON.stringify()": {
-		"prefix": "js",
+		"prefix": "jss",
 		"body": "JSON.stringify($0)"
 	},
 	"JSON.parse()": {
-		"prefix": "jp",
+		"prefix": "jsp",
 		"body": "JSON.parse($0)"
 	},
 
@@ -588,20 +580,28 @@
 
 	// DOM
 	"addEventListener": {
-		"prefix": "aevli",
+		"prefix": "adevl",
 		"body": "${1:document}.addEventListener('${2:event}', ${3:ev} => {\n\t${0}\n})"
 	},
 	"removeEventListener": {
-		"prefix": "revli",
+		"prefix": "rmevl",
 		"body": "${1:document}.removeEventListener('${2:event}', ${3:listener})"
 	},
 	"event handler": {
 		"prefix": "evon",
 		"body": "${1:emitter}.on('${2:event}', (${3:arguments}) => {\n\t${0}\n});"
 	},
+	"dom event prevent default": {
+		"prefix": "evpd",
+		"body": "${1:event}.preventDefault()"
+	},
+	"dom event stop propagation": {
+		"prefix": "evsp",
+		"body": "${1:event}.stopPropagation()"
+	},
 	"dom event cancel default and propagation": {
 		"prefix": "evcdp",
-		"body": "ev.preventDefault()\nev.stopPropagation()\nreturn false"
+		"body": "${1:event}.preventDefault()\n${1:event}.stopPropagation()\nreturn false"
 	},
 	"getElementById": {
 		"prefix": "gid",
@@ -628,15 +628,15 @@
 		"body": "${1:document}.createDocumentFragment(${2:elem})"
 	},
 	"createElement": {
-		"prefix": "cel",
+		"prefix": "crel",
 		"body": "${1:document}.createElement(${2:elem})"
 	},
 	"appendChild": {
-		"prefix": "ach",
+		"prefix": "apch",
 		"body": "${1:el}.appendChild(${2:elem})"
 	},
 	"removeChild": {
-		"prefix": "rch",
+		"prefix": "rmch",
 		"body": "${1:el}.removeChild(${2:elem})"
 	},
 	"classList.add": {
@@ -652,15 +652,15 @@
 		"body": "${1:el}.classList.toggle('${2:class}')"
 	},
 	"getAttribute": {
-		"prefix": "gatt",
+		"prefix": "getat",
 		"body": "${1:el}.getAttribute('${2:attr}')"
 	},
 	"setAttribute": {
-		"prefix": "satt",
+		"prefix": "setat",
 		"body": "${1:el}.setAttribute('${2:attr}', ${3:value})"
 	},
 	"removeAttribute": {
-		"prefix": "ratt",
+		"prefix": "rmat",
 		"body": "${1:el}.removeAttribute('${2:attr}')"
 	}
 }

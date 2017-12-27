@@ -119,21 +119,14 @@ const ${1:name} = yield ${2:value}
 
 ### Flow Control
 
-#### `ifs⇥` if statement
+#### `if⇥` if statement - default VSCode javascript snippet
 ```js
 if (${1:condition}) {
   ${0}
 }
 ```
 
-#### `ees⇥` and `ee⇥` else statement
-```js
-else {
-  ${0}
-}
-```
-
-#### `ies⇥` else statement
+#### `ifelse⇥` ifelse statement - default VSCode javascript snippet
 ```js
 if (${1:condition}) {
   ${0}
@@ -142,7 +135,14 @@ if (${1:condition}) {
 }
 ```
 
-#### `eis⇥` and `ei⇥` else if statement
+#### `else⇥` else statement
+```js
+else {
+  ${0}
+}
+```
+
+#### `elif⇥` else if statement
 ```js
 else if (${1:condition}) {
   ${0}
@@ -230,9 +230,16 @@ throw new Error(${0:error})
 ```
 
 
-### Functions
+### Functions -- Todo: Adjust function snippets to emphasize common patterns
 
-#### `fn⇥` anonymous function
+#### `fn⇥` named function
+```js
+function ${1:name} (${2:arguments}) {
+  ${0}
+}
+```
+
+#### `fna⇥` anonymous function
 ```js
 function (${1}) {${0}}
 ```
@@ -242,38 +249,31 @@ function (${1}) {${0}}
 function () {${0}}
 ```
 
-#### `fnn⇥` named function
-```js
-function ${1:name} (${2:arguments}) {
-  ${0}
-}
-```
-
 #### `afn⇥` arrow function (ES6)
 ```js
 (${1}) => {${0}}
 ```
 
-#### `afne⇥` arrow empty function (ES6)
-```js
-() => {${0}}
-```
-
 #### `afnc⇥` arrow function concise body (ES6)
 ```js
-(${1:arguments}) => ${2:statement}
+(${1}) => ${2:statement}
 ```
 
-#### `gfn⇥` generator function (ES6)
+#### `afne⇥` arrow function empty arguments (ES6)
 ```js
-function* (${1:arguments}) {
+() => ${0}
+```
+
+#### `gfn⇥` named generator function (ES6)
+```js
+function* ${1:name} (${1:arguments}) {
   ${0}
 }
 ```
 
-#### `gfnn⇥` named generator function (ES6)
+#### `gfna⇥` anonymous generator function (ES6)
 ```js
-function* ${1:name} (${1:arguments}) {
+function* (${1:arguments}) {
   ${0}
 }
 ```
@@ -317,7 +317,7 @@ ${1:fn}.bind(${2:this}, ${3:arguments})
 
 ### Iterables
 
-#### `fleach⇥` forEach loop
+#### `each⇥` forEach loop
 ```js
 ${1:iterable}.forEach((${2:item}) => {
   ${0}
@@ -406,7 +406,7 @@ ${1:Object}.prototype.${2:methodName} = function (${3:arguments}) {
 #### `cls⇥` class (ES6)
 ```js
 class ${1:name} {
-  constructor(${2:arguments}) {
+  constructor (${2:arguments}) {
     ${0}
   }
 }
@@ -415,7 +415,7 @@ class ${1:name} {
 #### `clsext⇥` extend a class (ES6)
 ```js
 class ${1:name} extends ${2:base} {
-  constructor(${2:arguments}) {
+  constructor (${2:arguments}) {
     super(${2:arguments})
     ${0}
   }
@@ -733,7 +733,7 @@ afterEach(() => {
 
 ### Mocha, Jasmine, ... using anonymous functions
 
-#### `tdescribe⇥` and `fd⇥` describe
+#### `tdescribe⇥` and `tds⇥` describe
 ```js
 describe('${1:description}', function () {
   ${0}
@@ -855,12 +855,12 @@ setImmediate(() => {
 'use strict'
 ```
 
-#### `js⇥` JSON Stringify
+#### `jss⇥` JSON Stringify
 ```js
 JSON.stringify($0)
 ```
 
-#### `jp⇥` JSON Parse
+#### `jsp⇥` JSON Parse
 ```js
 JSON.parse($0)
 ```
@@ -926,14 +926,14 @@ console.warn(${1:object})
 
 ### DOM
 
-#### `aevli⇥` addEventListener
+#### `adevl⇥` addEventListener
 ```js
 ${1:document}.addEventListener('${2:event}', ${3:ev} => {
   ${0}
 })
 ```
 
-#### `revli⇥` removeEventListener
+#### `rmevl⇥` removeEventListener
 ```js
 ${1:document}.removeEventListener('${2:event}', ${3:listener})
 ```
@@ -945,10 +945,20 @@ ${1:emitter}.on('${2:event}', (${3:arguments}) => {
 })
 ```
 
+#### `evpd` dom event prevent default
+```js
+${1:event}.preventDefault()
+```
+
+#### `evsp` dom event stop propagation
+```js
+${1:event}.stopPropagation()
+```
+
 #### `evcdp` dom event cancel default and propagation
 ```js
-ev.preventDefault()
-ev.stopPropagation()
+${1:event}.preventDefault()
+${1:event}.stopPropagation()
 return false
 ```
 
@@ -983,58 +993,58 @@ Array.from(${1:document}.querySelectorAll('${2:selector}'))
 ${1:document}.createDocumentFragment(${2:elem});
 ```
 
-#### `cel⇥` createElement
+#### `crel⇥` createElement
 
 ```js
-${1:document}.createElement(${2:elem});
+${1:el}.createElement(${2:elem});
 ```
 
-#### `ach⇥` appendChild
+#### `apch⇥` appendChild
 
 ```js
-${1:document}.appendChild(${2:elem});
+${1:el}.appendChild(${2:elem});
 ```
 
-#### `rch⇥` removeChild
+#### `rmch⇥` removeChild
 
 ```js
-${1:document}.removeChild(${2:elem});
+${1:el}.removeChild(${2:elem});
 ```
 
 #### `clladd⇥` classList.add
 
 ```js
-${1:document}.classList.add('${2:class}');
+${1:el}.classList.add('${2:class}');
 ```
 
 #### `cllrem⇥` classList.remove
 
 ```js
-${1:document}.classList.remove('${2:class}');
+${1:el}.classList.remove('${2:class}');
 ```
 
 #### `clltog⇥` classList.toggle
 
 ```js
-${1:document}.classList.toggle('${2:class}');
+${1:el}.classList.toggle('${2:class}');
 ```
 
-#### `gatt⇥` getAttribute
+#### `getat⇥` getAttribute
 
 ```js
-${1:document}.getAttribute('${2:attr}');
+${1:el}.getAttribute('${2:attr}');
 ```
 
-#### `satt⇥` setAttribute
+#### `setat⇥` setAttribute
 
 ```js
-${1:document}.setAttribute('${2:attr}', ${3:value});
+${1:el}.setAttribute('${2:attr}', ${3:value});
 ```
 
-#### `ratt⇥` removeAttribute
+#### `rmat⇥` removeAttribute
 
 ```js
-${1:document}.removeAttribute('${2:attr}');
+${1:el}.removeAttribute('${2:attr}');
 ```
 
 ## VS Code Reactjs snippets
@@ -1054,9 +1064,9 @@ Below is a list of all available snippets and the triggers of each one. The **�
 | `rpc→`   | `class pure component skeleton with prop types after the class` |
 | `rsc→`   | `stateless component skeleton` |
 | `rscp→`  | `stateless component with prop types skeleton` |
-| `con→`   | `class default constructor with props` |
-| `conc→`  | `class default constructor with props and context` |
-| `est→`   | `empty state object` |
+| `rcon→`  | `class default constructor with props` |
+| `rconc→` | `class default constructor with props and context` |
+| `estat→` | `empty state object` |
 | `bnd→`   | `binds the this of method inside the constructor` |
 | `cwm→`   | `componentWillMount method` |
 | `cdm→`   | `componentDidMount method` |

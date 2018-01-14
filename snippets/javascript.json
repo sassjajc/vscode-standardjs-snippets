@@ -44,7 +44,7 @@
 		"body": "const ${1:name} = yield ${2:value}"
 	},
 
-	//flow control
+
 	"else statement": {
 		"prefix": "else",
 		"body": "else {\n\t${0}\n}"
@@ -94,7 +94,7 @@
 		"body": "throw new Error(${0:error})"
 	},
 
-	// functions
+
 	"named function": {
 		"prefix": "fn",
 		"body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}"
@@ -152,7 +152,6 @@
 		"body": "${1:fn}.bind(${2:this}, ${3:arguments})"
 	},
 
-	// iterables
 	"forEach loop": {
 		"prefix": "each",
 		"body": "${1:iterable}.forEach((${2:item}) => {\n\t${0}\n})"
@@ -182,7 +181,7 @@
 		"body": "${1:iterable}.some((${2:item}) => {\n\t${0}\n})"
 	},
 
-	// objects and classes
+
 	"Object.create": {
 		"prefix": "ocreate",
 		"body": "Object.create(${1:obj})"
@@ -207,6 +206,7 @@
 		"prefix": "proto",
 		"body": "${1:Object}.prototype.${2:method} = function (${3:arguments}) {\n\t${0}\n}"
 	},
+
 
 	"class": {
 		"prefix": "cls",
@@ -237,7 +237,7 @@
 		"body": "get ${1:property} () {\n\t${0}\n}\nset ${1:property} (${2:value}) {\n\t\n}"
 	},
 
-	// return values
+
 	"return": {
 		"prefix": "rt",
 		"body": "return ${0}"
@@ -263,7 +263,7 @@
 		"body": "return new Promise((resolve, reject) => {\n\t${0}\n})"
 	},
 
-	// Promises
+
 	"new Promise": {
 		"prefix": "pnew",
 		"body": "new Promise((resolve, reject) => {\n\t${0}\n})"
@@ -305,7 +305,7 @@
 		"body": "yield ${0}"
 	},
 
-	// ES6 modules
+
 	"importModuleDefault": {
 		"prefix": "imdef",
 		"body": "import ${2:moduleName} from '${1:module}'$0",
@@ -357,7 +357,7 @@
 		"description": "Export default class that extends a base class"
 	},
 
-	// node.js modules
+
 	"require": {
 		"prefix": "rq",
 		"body": "require('${1:module}')"
@@ -387,7 +387,7 @@
 		"body": "(err, ${1:value}) => {\n\tif (err) throw err\n\t${0}\n}"
 	},
 
-	//testing
+
 	"Array.isArray()": {
 		"prefix": "iarr",
 		"body": "Array.isArray(${1:source})"
@@ -405,7 +405,7 @@
 		"body": "expect(${1})${0}",
 		"description": "expect() for multiple libraries [expect, jasmine, jest, ...]"
 	},
-	// jest
+
 	"describe (jest)": {
 		"prefix": "adescribe",
 		"body": "describe('${1:description}', () => {\n\t${0}\n})"
@@ -440,7 +440,7 @@
 		"body": "afterEach(() => {\n\t${0}\n})",
 		"description": "afterEach, using an arrow function for jest"
 	},
-	// mocha jasmine
+
 	"describe (mocha jasmine)": {
 		"prefix": "tdescribe",
 		"body": "describe('${1:description}', function () {\n\t${0}\n})"
@@ -493,7 +493,7 @@
 		"description": "Mocha TDD suite with setup and teardown"
 	},
 
-	// timers
+
 	"setTimeout": {
 		"prefix": "stim",
 		"body": "setTimeout(() => {\n\t${0}\n}, ${1:delay})"
@@ -507,7 +507,7 @@
 		"body": "setImmediate(() => {\n\t${0}\n})"
 	},
 
-	// Miscellaneous JS
+
 	"use strict": {
 		"prefix": "ust",
 		"body": "'use strict'"
@@ -521,7 +521,7 @@
 		"body": "JSON.parse($0)"
 	},
 
-	// Console
+
 	"consoleAssert": {
 		"prefix": "coassert",
 		"body": "console.assert(${1:expression}, ${2:object})",
@@ -578,7 +578,7 @@
 		"description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
 	},
 
-	// DOM
+
 	"addEventListener": {
 		"prefix": "adevl",
 		"body": "${1:document}.addEventListener('${2:event}', ${3:ev} => {\n\t${0}\n})"

@@ -51,6 +51,11 @@
     "body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nconst ${1:componentName} = props => {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n}\n\n${1:componentName}.propTypes = {\n\t$0\n}\n\nexport default ${1:componentName}",
     "description": "Creates a stateless React component with PropTypes and ES6 module system"
   },
+  "reactStatelessJustComponent": {
+    "prefix": "rsjc",
+    "body": "const ${1:componentName} = () => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}\n",
+    "description": "Creates a stateless React component without import and default export lines, without PropTypes"
+  },
 
   "classConstructor": {
     "prefix": "rcon",
@@ -77,7 +82,7 @@
 
   "componentWillMount": {
     "prefix": "cwm",
-    "body": "\ncomponentWillMount () {\n\t$0\n}\n",
+    "body": "componentWillMount () {\n\t$0\n}\n",
     "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
 
@@ -126,13 +131,17 @@
   "componentSetStateObject": {
     "prefix": "sst",
     "body": "this.setState($0)",
-    "description": "Performs a shallow merge of nextState into current state"
+    "description": "Perform a shallow merge of nextState into current state"
   },
-
   "componentSetStateFunc": {
     "prefix": "ssf",
-    "body": "this.setState((state, props) => { return { $0 } })\n",
-    "description": "Performs a shallow merge of nextState into current state"
+    "body": "this.setState((state, props) => { return { $0 } })",
+    "description": "Perform a shallow merge of nextState into current state"
+  },
+  "componentSetStateConciseFunc": {
+    "prefix": "sscf",
+    "body": "this.setState((${1:state}) => ({ $0 }))",
+    "description": "Perform a shallow merge of nextState into current state"
   },
 
   "componentProps": {

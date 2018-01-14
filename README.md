@@ -1064,6 +1064,7 @@ Below is a list of all available snippets and the triggers of each one. The **�
 | `rpc→`   | `class pure component skeleton with prop types after the class` |
 | `rsc→`   | `stateless component skeleton` |
 | `rscp→`  | `stateless component with prop types skeleton` |
+| `rsjc→`  | `stateless component without import and default export lines` |
 | `rcon→`  | `class default constructor with props` |
 | `rconc→` | `class default constructor with props and context` |
 | `estat→` | `empty state object` |
@@ -1078,6 +1079,7 @@ Below is a list of all available snippets and the triggers of each one. The **�
 | `ren→`   | `render method` |
 | `sst→`   | `this.setState with object as parameter` |
 | `ssf→`   | `this.setState with function as parameter` |
+| `sscf→`  | `this.setState with concise function as parameter` |
 | `props→` | `this.props` |
 | `state→` | `this.state` |
 | `jel→`   | `jsx element` |

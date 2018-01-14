@@ -3,7 +3,7 @@
   "displayName": "JavaScript standardjs styled keyword accessible snippets",
   "publisher": "sassjajc",
   "icon": "images/javascript.png",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "standardjs styled javascript snippets for visual studio code with more accessible keyword phrases",
   "repository": {
     "type": "git",
@@ -12,8 +12,8 @@
   "engines": {
     "vscode": "0.10.x"
   },
-  "author": "Jiri Spac",
-  "contributors": ["Sassja Ceballos"],
+  "author": "Sassja Ceballos",
+  "contributors": ["Jiri Spac"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sassjajc/vscode-standardjs-snippets/issues"

@@ -53,7 +53,7 @@
   },
   "reactStatelessJustComponent": {
     "prefix": "rsjc",
-    "body": "const ${1:componentName} = () => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}\n",
+    "body": "const ${1:componentName} = (${2}) => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}\n",
     "description": "Creates a stateless React component without import and default export lines, without PropTypes"
   },
 

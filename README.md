@@ -87,6 +87,11 @@ const ${1:name} = ${2:value}
 const ${1:name} = await ${2:value}
 ```
 
+#### `cassy⇥` const assignment yield
+```js
+const ${1:name} = yield ${2:value}
+```
+
 #### `cassob⇥` const assignment object
 ```js
 const ${1:name} = {
@@ -111,9 +116,11 @@ const ${1:name} = [
 const [{${1:name}}] = ${2:value}
 ```
 
-#### `cassy⇥` const assignment yield
+#### `cassaf⇥` const assignment yield
 ```js
-const ${1:name} = yield ${2:value}
+const ${1:name} = (${2:arguments}) => {
+  ${0}
+}
 ```
 
 

@@ -82,16 +82,6 @@ let ${1:name} = yield ${2:value}
 const ${1:name} = ${2:value}
 ```
 
-#### `cassaw⇥` const assignment await
-```js
-const ${1:name} = await ${2:value}
-```
-
-#### `cassy⇥` const assignment yield
-```js
-const ${1:name} = yield ${2:value}
-```
-
 #### `cassob⇥` const assignment object
 ```js
 const ${1:name} = {
@@ -116,7 +106,7 @@ const ${1:name} = [
 const [{${1:name}}] = ${2:value}
 ```
 
-#### `cassaf⇥` const assignment yield
+#### `cassaf⇥` const assignment arrow function
 ```js
 const ${1:name} = (${2:arguments}) => {
   ${0}
@@ -269,6 +259,13 @@ function () {${0}}
 #### `afne⇥` arrow function empty arguments (ES6)
 ```js
 () => ${0}
+```
+
+#### `afnr⇥` arrow function with return (ES6)
+```js
+(${1}) => {
+  return ${0}
+}
 ```
 
 #### `gfn⇥` named generator function (ES6)
@@ -1078,6 +1075,7 @@ Below is a list of all available snippets and the triggers of each one. The **�
 | `bnd→`   | `binds the this of method inside the constructor` |
 | `cwm→`   | `componentWillMount method` |
 | `cdm→`   | `componentDidMount method` |
+| `cgd→`   | `componentGetDerivedStateFromProps method` |
 | `cwr→`   | `componentWillReceiveProps method` |
 | `scu→`   | `shouldComponentUpdate method` |
 | `cwup→`  | `componentWillUpdate method` |
@@ -1089,10 +1087,10 @@ Below is a list of all available snippets and the triggers of each one. The **�
 | `sscf→`  | `this.setState with concise function as parameter` |
 | `props→` | `this.props` |
 | `state→` | `this.state` |
-| `jel→`   | `jsx element` |
-| `jsc→`   | `self closed jsx element` |
 | `rpt→`   | `empty propTypes declaration` |
 | `rdp→`   | `empty defaultProps declaration` |
+| `jel→`   | `jsx element` |
+| `jsc→`   | `self closed jsx element` |
 
 The following table lists all the snippets that can be used for prop types.
 Every snippet regarding prop types begins with ```pt``` so it's easy to group it all together and explore all the available options.

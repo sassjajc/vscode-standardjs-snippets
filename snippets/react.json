@@ -92,6 +92,12 @@
     "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
 
+  "componentGetDerivedStateFromProps": {
+  "prefix": "cgd",
+  "body": "\nstatic getDerivedStateFromProps(nextProps, prevState) {\n\t$0\n}\n",
+  "description": "Invoked after a component is instantiated as well as when it receives new props. It should return an object to update state, or null to indicate that the new props do not require any state updates."
+  },
+
   "componentWillReceiveProps": {
     "prefix": "cwr",
     "body": "componentWillReceiveProps (nextProps) {\n\t$0\n}\n",
@@ -310,7 +316,7 @@
   },
   "jsx element": {
     "prefix": "jel",
-    "body": "<${1:elementName}>\n\t$0\n</${1:elementName}>",
+    "body": "<${1:elementName}>\n\t$0\n</${1}>",
     "description": "A JSX element"
   },
   "jsx element self closed": {

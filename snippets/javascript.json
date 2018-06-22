@@ -19,14 +19,6 @@
 		"prefix": "cass",
 		"body": "const ${1:name} = ${2:value}"
 	},
-	"const assignment await": {
-		"prefix": "cassaw",
-		"body": "const ${1:name} = await ${2:value}"
-	},
-	"const assignment yield": {
-		"prefix": "cassy",
-		"body": "const ${1:name} = yield ${2:value}"
-	},
 	"const assignment object": {
 		"prefix": "cassob",
 		"body": "const ${1:name} = {\n\t${0}\n}"
@@ -123,7 +115,11 @@
 	"arrow function empty arguments": {
 		"prefix": "afne",
 		"body": "() => ${0}"
-	},
+  },
+  "arrow function with return": {
+  "prefix": "afnr",
+  "body": "(${1}) => {\n\treturn ${0}\n}"
+  },
 	"named generator function": {
 		"prefix": "gfn",
 		"body": "function* ${1:name} (${2:arguments}) {\n\t${0}\n}"

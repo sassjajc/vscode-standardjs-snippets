@@ -320,8 +320,23 @@
     "description": "A JSX element"
   },
   "jsx element self closed": {
-    "prefix": "jsc",
+    "prefix": "jec",
     "body": "<${1:elementName} />",
     "description": "A self-closed JSX element"
+  },
+  "jsx element with key": {
+    "prefix": "jek",
+    "body": "<${1:elementName} key={${2:item.id}}>\n\t$0\n</${1}>",
+    "description": "A JSX element with a key"
+  },
+  "jsx element with key self closed": {
+    "prefix": "jekc",
+    "body": "<${1:elementName} key={${2:item.id}} />",
+    "description": "A self-closed JSX element with a key"
+  },
+  "jsx list": {
+    "prefix": "jlst",
+    "body": "{${1:array}.map((item) => (\n\t$0\n))}",
+    "description": "A list of elements"
   }
 }

@@ -1090,7 +1090,10 @@ Below is a list of all available snippets and the triggers of each one. The **�
 | `rpt→`   | `empty propTypes declaration` |
 | `rdp→`   | `empty defaultProps declaration` |
 | `jel→`   | `jsx element` |
-| `jsc→`   | `self closed jsx element` |
+| `jec→`   | `self closed jsx element` |
+| `jek→`   | `jsx element with key` |
+| `jekc→`  | `self closed jsx element with key` |
+| `jlst→`  | `list of elements` |
 
 The following table lists all the snippets that can be used for prop types.
 Every snippet regarding prop types begins with ```pt``` so it's easy to group it all together and explore all the available options.
